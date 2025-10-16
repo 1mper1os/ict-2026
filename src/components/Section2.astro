@@ -1,0 +1,878 @@
+---
+// MachuPicchuTourCard.astro - Versión Premium Mejorada
+const tours = [
+  {
+    title: "Machu Picchu en Tren Vistadome",
+    subtitle: "Experiencia de Lujo",
+    description: "Viaja con estilo en el exclusivo tren Vistadome. Disfruta de ventanas panorámicas, show cultural a bordo y un servicio excepcional. La forma más cómoda y elegante de llegar a la maravilla del mundo.",
+    image: "../../public/2146185.jpg",
+    badge: "LUJO",
+    trainType: "Vistadome",
+    rating: 4.9,
+    reviews: 523,
+    duration: "14 horas",
+    locations: [
+      "Cusco",
+      "Ollantaytambo",
+      "Aguas Calientes",
+      "Machu Picchu"
+    ],
+    highlights: [
+      "Ventanas panorámicas",
+      "Show cultural",
+      "Snacks gourmet",
+      "Guía bilingüe"
+    ],
+    price: "380.00",
+    oldPrice: "450.00",
+    discount: "15%"
+  },
+  {
+    title: "Machu Picchu en Tren Voyager",
+    subtitle: "Confort y Vistas",
+    description: "El tren Voyager ofrece un equilibrio perfecto entre comodidad y precio. Amplias ventanas, asientos confortables y un servicio atento te acompañarán en este viaje inolvidable por el Valle Sagrado.",
+    image: "../../public/4894.jpg",
+    badge: "POPULAR",
+    trainType: "Voyager",
+    rating: 4.7,
+    reviews: 412,
+    duration: "13 horas",
+    locations: [
+      "Cusco",
+      "Ollantaytambo",
+      "Aguas Calientes",
+      "Machu Picchu"
+    ],
+    highlights: [
+      "Asientos cómodos",
+      "Vistas espectaculares",
+      "Servicio incluido",
+      "Guía profesional"
+    ],
+    price: "320.00",
+    oldPrice: "400.00",
+    discount: "20%"
+  },
+  {
+    title: "Machu Picchu en Tren Expedition",
+    subtitle: "Aventura Accesible",
+    description: "La opción perfecta para viajeros que buscan una experiencia auténtica sin comprometer la calidad. El tren Expedition combina confort, excelentes vistas y el mejor precio del mercado.",
+    image: "../../public/inti-punku-vistas-1_65_11zon.webp",
+    badge: "MEJOR PRECIO",
+    trainType: "Expedition",
+    rating: 4.6,
+    reviews: 891,
+    duration: "12 horas",
+    locations: [
+      "Cusco",
+      "Ollantaytambo",
+      "Aguas Calientes",
+      "Machu Picchu"
+    ],
+    highlights: [
+      "Precio accesible",
+      "Vistas increíbles",
+      "Servicio confiable",
+      "Tour guiado"
+    ],
+    price: "280.00",
+    oldPrice: "350.00",
+    discount: "20%"
+  },
+  {
+    title: "Machu Picchu Tour Full Day",
+    subtitle: "Todo Incluido",
+    description: "Experiencia completa con el mejor servicio. Incluye tren de lujo, entradas, guía experto bilingüe, almuerzo gourmet y transporte privado. Déjanos cuidar cada detalle de tu viaje soñado.",
+    image: "../../public/2146185.jpg",
+    badge: "RECOMENDADO",
+    trainType: "Premium",
+    rating: 5.0,
+    reviews: 267,
+    duration: "15 horas",
+    locations: [
+      "Cusco",
+      "Valle Sagrado",
+      "Ollantaytambo",
+      "Aguas Calientes",
+      "Machu Picchu"
+    ],
+    highlights: [
+      "Todo incluido",
+      "Transporte privado",
+      "Almuerzo gourmet",
+      "Guía exclusivo"
+    ],
+    price: "480.00",
+    oldPrice: "600.00",
+    discount: "20%"
+  }
+];
+---
+
+<section class="tours-section" id="machu-picchu">
+  <div class="section-header">
+    <span class="section-subtitle">Tours en Tren a Machu Picchu</span>
+    <h2 class="section-title">
+      DESCUBRE <span class="highlight">MACHU PICCHU</span> EN TREN
+    </h2>
+    <p class="section-description">
+      Elige tu experiencia perfecta. Todos nuestros tours incluyen guías certificados, entradas y una experiencia inolvidable.
+    </p>
+  </div>
+
+  <div class="container">
+    {tours.map((tour, index) => (
+      <article class="tour-card-horizontal" data-index={index}>
+        <!-- Badge de tipo -->
+        <div class="card-badge" data-type={tour.badge.toLowerCase().replace(' ', '-')}>
+          {tour.badge}
+        </div>
+
+        <!-- Badge de descuento -->
+        {tour.discount && (
+          <div class="discount-badge">-{tour.discount}</div>
+        )}
+
+        <!-- Imagen con overlay -->
+        <div class="card-image-container">
+          <div class="image-wrapper">
+            <img src={tour.image} alt={tour.title} loading="lazy" />
+            <div class="image-overlay">
+              <div class="train-badge">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="6" width="18" height="11" rx="2"></rect>
+                  <path d="M3 17h18"></path>
+                  <circle cx="7" cy="19" r="1"></circle>
+                  <circle cx="17" cy="19" r="1"></circle>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span>{tour.trainType}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contenido de la tarjeta -->
+        <div class="card-content">
+          <!-- Header con título y rating -->
+          <div class="card-header">
+            <div class="title-section">
+              <h3 class="card-title">{tour.title}</h3>
+              <p class="card-subtitle">{tour.subtitle}</p>
+            </div>
+            <div class="rating-section">
+              <div class="rating-stars">★★★★★</div>
+              <div class="rating-info">
+                <span class="rating-value">{tour.rating}</span>
+                <span class="rating-reviews">({tour.reviews} reviews)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Descripción -->
+          <p class="card-description">{tour.description}</p>
+
+          <!-- Ruta y duración -->
+          <div class="info-grid">
+            <div class="info-box route-box">
+              <div class="info-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3" fill="white"></circle>
+                </svg>
+              </div>
+              <div class="info-content">
+                <div class="info-label">Ruta</div>
+                <div class="locations-compact">
+                  {tour.locations.map((loc, idx) => (
+                    <span class="location-dot" title={loc}>
+                      {idx < tour.locations.length - 1 ? '•' : '★'}
+                    </span>
+                  ))}
+                  <span class="location-text">{tour.locations[0]} → {tour.locations[tour.locations.length - 1]}</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-box duration-box">
+              <div class="info-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div class="info-content">
+                <div class="info-label">Duración</div>
+                <div class="info-value">{tour.duration}</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Highlights -->
+          <div class="highlights-section">
+            <div class="highlights-title">✓ Incluye:</div>
+            <div class="highlights-grid">
+              {tour.highlights.map((highlight) => (
+                <div class="highlight-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>{highlight}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Footer con precio y acciones -->
+          <div class="card-footer">
+            <div class="price-section">
+              <div class="price-wrapper">
+                {tour.oldPrice && (
+                  <span class="old-price">${tour.oldPrice}</span>
+                )}
+                <div class="current-price-wrapper">
+                  <span class="price-label">Desde</span>
+                  <span class="current-price">${tour.price}</span>
+                </div>
+                <span class="price-note">Por persona</span>
+              </div>
+            </div>
+
+            <div class="actions-section">
+              <button class="btn btn-secondary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                Ver Detalles
+              </button>
+              <button class="btn btn-primary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                Reservar Ahora
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Efecto de brillo en hover -->
+        <div class="card-shine"></div>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .tours-section {
+    padding: 6rem 2rem;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+    position: relative;
+  }
+
+  .tours-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: radial-gradient(ellipse at top, rgba(13, 95, 95, 0.03), transparent);
+    pointer-events: none;
+  }
+
+  /* Section Header */
+  .section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+  }
+
+  .section-subtitle {
+    display: inline-block;
+    color: #d32f2f;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #0d5f5f;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+  }
+
+  .section-title .highlight {
+    color: #d32f2f;
+    position: relative;
+  }
+
+  .section-title .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #d32f2f, #ff8c42);
+    border-radius: 2px;
+  }
+
+  .section-description {
+    color: #666;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  /* Container */
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  /* Tour Card Horizontal */
+  .tour-card-horizontal {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+  }
+
+  .tour-card-horizontal:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Badges */
+  .card-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    z-index: 10;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-badge[data-type="lujo"] {
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: #333;
+  }
+
+  .card-badge[data-type="popular"] {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+  }
+
+  .card-badge[data-type="mejor-precio"] {
+    background: linear-gradient(135deg, #4caf50, #45a049);
+    color: white;
+  }
+
+  .card-badge[data-type="recomendado"] {
+    background: linear-gradient(135deg, #d32f2f, #b71c1c);
+    color: white;
+  }
+
+  .discount-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #ff5252;
+    color: white;
+    padding: 0.5rem 0.8rem;
+    border-radius: 50%;
+    font-size: 0.85rem;
+    font-weight: 800;
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(255, 82, 82, 0.4);
+  }
+
+  /* Image Container */
+  .card-image-container {
+    position: relative;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .image-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .tour-card-horizontal:hover .image-wrapper img {
+    transform: scale(1.1);
+  }
+
+  .image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .train-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #0d5f5f;
+  }
+
+  .train-badge svg {
+    color: #d32f2f;
+  }
+
+  /* Card Content */
+  .card-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  /* Header */
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #f0f0f0;
+  }
+
+  .title-section {
+    flex: 1;
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #0d5f5f;
+    margin: 0 0 0.3rem 0;
+    line-height: 1.2;
+  }
+
+  .card-subtitle {
+    color: #ff8c42;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .rating-section {
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .rating-stars {
+    color: #ffc107;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.2rem;
+  }
+
+  .rating-info {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    justify-content: flex-end;
+    font-size: 0.85rem;
+  }
+
+  .rating-value {
+    font-weight: 700;
+    color: #333;
+  }
+
+  .rating-reviews {
+    color: #888;
+  }
+
+  /* Description */
+  .card-description {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* Info Grid */
+  .info-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+  }
+
+  .info-box {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 1rem;
+    border-radius: 12px;
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+  }
+
+  .info-icon {
+    width: 36px;
+    height: 36px;
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .route-box .info-icon svg {
+    color: #d32f2f;
+  }
+
+  .duration-box .info-icon svg {
+    color: #0d5f5f;
+  }
+
+  .info-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .info-label {
+    font-size: 0.75rem;
+    color: #666;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+  }
+
+  .info-value {
+    font-size: 0.95rem;
+    color: #0d5f5f;
+    font-weight: 700;
+  }
+
+  .locations-compact {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    overflow: hidden;
+  }
+
+  .location-dot {
+    color: #d32f2f;
+    font-size: 0.8rem;
+  }
+
+  .location-text {
+    font-size: 0.85rem;
+    color: #333;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Highlights */
+  .highlights-section {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 10px;
+    border-left: 3px solid #4caf50;
+  }
+
+  .highlights-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #2e7d32;
+    margin-bottom: 0.7rem;
+  }
+
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: #555;
+    font-weight: 500;
+  }
+
+  .highlight-item svg {
+    color: #4caf50;
+    flex-shrink: 0;
+  }
+
+  /* Footer */
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: auto;
+    padding-top: 1.2rem;
+    border-top: 2px solid #f0f0f0;
+  }
+
+  .price-section {
+    flex-shrink: 0;
+  }
+
+  .price-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .old-price {
+    font-size: 0.9rem;
+    color: #999;
+    text-decoration: line-through;
+  }
+
+  .current-price-wrapper {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+
+  .price-label {
+    font-size: 0.75rem;
+    color: #666;
+    font-weight: 600;
+  }
+
+  .current-price {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #ff8c42;
+    line-height: 1;
+  }
+
+  .price-note {
+    font-size: 0.7rem;
+    color: #888;
+  }
+
+  /* Actions */
+  .actions-section {
+    display: flex;
+    gap: 0.8rem;
+    flex: 1;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    flex: 1;
+  }
+
+  .btn svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  .btn-secondary {
+    background: white;
+    color: #0d5f5f;
+    border: 2px solid #0d5f5f;
+  }
+
+  .btn-secondary:hover {
+    background: #0d5f5f;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(13, 95, 95, 0.3);
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #d32f2f, #b71c1c);
+    color: white;
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(211, 47, 47, 0.4);
+  }
+
+  /* Card Shine Effect */
+  .card-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    transition: left 0.6s ease;
+    pointer-events: none;
+  }
+
+  .tour-card-horizontal:hover .card-shine {
+    left: 100%;
+  }
+
+  /* Responsive */
+  @media (max-width: 1200px) {
+    .tour-card-horizontal {
+      grid-template-columns: 380px 1fr;
+    }
+
+    .card-content {
+      padding: 1.8rem;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .tour-card-horizontal {
+      grid-template-columns: 350px 1fr;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+    }
+
+    .info-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .highlights-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .tours-section {
+      padding: 4rem 1.5rem;
+    }
+
+    .container {
+      gap: 2rem;
+    }
+
+    .tour-card-horizontal {
+      grid-template-columns: 1fr;
+    }
+
+    .card-image-container {
+      height: 260px;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    .card-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .rating-section {
+      text-align: left;
+    }
+
+    .rating-info {
+      justify-content: flex-start;
+    }
+
+    .card-footer {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .price-section {
+      text-align: center;
+    }
+
+    .price-wrapper {
+      align-items: center;
+    }
+
+    .actions-section {
+      flex-direction: column;
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card-badge {
+      font-size: 0.65rem;
+      padding: 0.4rem 0.8rem;
+    }
+
+    .discount-badge {
+      font-size: 0.75rem;
+      padding: 0.4rem 0.6rem;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+    }
+
+    .current-price {
+      font-size: 1.6rem;
+    }
+
+    .highlight-item {
+      font-size: 0.75rem;
+    }
+  }
+</style>

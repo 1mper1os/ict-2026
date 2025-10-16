@@ -1,0 +1,991 @@
+---
+// Blog.astro - Sakura Expeditions
+const articulos = [
+  {
+    id: 1,
+    titulo: "Guía Completa para el Camino Inca: Todo lo que Necesitas Saber",
+    slug: "guia-completa-camino-inca",
+    extracto: "Descubre todo sobre el trek más famoso de Sudamérica. Desde permisos hasta el mejor equipamiento, te contamos todo lo necesario para una experiencia inolvidable.",
+    imagen: "/2146185.jpg",
+    categoria: "Guías de Viaje",
+    autor: {
+      nombre: "Maryori Mejia",
+      avatar: "CM",
+      rol: "Guía Principal"
+    },
+    fecha: "2025-01-15",
+    tiempoLectura: "12 min",
+    destacado: true,
+    tags: ["Camino Inca", "Trekking", "Machu Picchu"],
+    vistas: 2543,
+    comentarios: 28
+  },
+  {
+    id: 2,
+    titulo: "10 Consejos Esenciales para Aclimatarse en Cusco",
+    slug: "consejos-aclimatacion-cusco",
+    extracto: "La altura de Cusco puede ser un desafío. Aprende cómo prepararte correctamente y evitar el mal de altura para disfrutar al máximo tu aventura.",
+    imagen: "/4894.jpg",
+    categoria: "Tips & Consejos",
+    autor: {
+      nombre: "Maryori Mejia",
+      avatar: "RQ",
+      rol: "Guía Certificado"
+    },
+    fecha: "2025-01-05",
+    tiempoLectura: "6 min",
+    destacado: false,
+    tags: ["Cusco", "Salud", "Aclimatación"],
+    vistas: 1654,
+    comentarios: 22
+  },
+  {
+    id: 3,
+    titulo: "Mejor Época para Visitar Machu Picchu: Guía Completa 2025",
+    slug: "mejor-epoca-machu-picchu",
+    extracto: "Planifica tu viaje en el momento perfecto. Analizamos clima, temporadas alta y baja, y los mejores meses para visitar la maravilla del mundo.",
+    imagen: "/Camino-Inca-2-Dias.webp",
+    categoria: "Planificación",
+    autor: {
+      nombre: "Maryori Mejia",
+      avatar: "AT",
+      rol: "Asesora de Viajes"
+    },
+    fecha: "2024-12-28",
+    tiempoLectura: "10 min",
+    destacado: false,
+    tags: ["Machu Picchu", "Clima", "Planificación"],
+    vistas: 3421,
+    comentarios: 35
+  },
+  {
+    id: 4,
+    titulo: "Qué Llevar en tu Mochila para el Camino Inca: Lista Definitiva",
+    slug: "que-llevar-camino-inca",
+    extracto: "La lista definitiva de equipamiento para tu trek. Desde lo esencial hasta los extras que marcan la diferencia en tu experiencia de 4 días.",
+    imagen: "/Camino-Inca-4-Dias.webp",
+    categoria: "Equipamiento",
+    autor: {
+      nombre: "Maryori Mejia",
+      avatar: "CM",
+      rol: "Guía Principal"
+    },
+    fecha: "2024-12-20",
+    tiempoLectura: "9 min",
+    destacado: false,
+    tags: ["Equipamiento", "Camino Inca", "Preparación"],
+    vistas: 2156,
+    comentarios: 31
+  },
+  {
+    id: 5,
+    titulo: "Historia y Misterios del Camino Inca: Un Viaje en el Tiempo",
+    slug: "historia-camino-inca",
+    extracto: "Explora los secretos ancestrales del Qhapaq Ñan. Descubre la ingeniería inca, los sitios arqueológicos y las leyendas que rodean este camino sagrado.",
+    imagen: "/Camino-Inca-Express.webp",
+    categoria: "Historia & Cultura",
+    autor: {
+      nombre: "Maryori Mejia",
+      avatar: "LP",
+      rol: "Historiador"
+    },
+    fecha: "2024-12-15",
+    tiempoLectura: "15 min",
+    destacado: false,
+    tags: ["Historia", "Cultura Inca", "Arqueología"],
+    vistas: 1789,
+    comentarios: 18
+  }
+];
+
+const articulosDestacados = articulos.filter(a => a.destacado);
+const articulosRecientes = articulos.filter(a => !a.destacado);
+---
+
+<section class="blog-section">
+  
+  </div>
+
+  <div class="container">
+    <div class="blog-layout">
+      <!-- Main Content -->
+      <main class="blog-main">
+        
+
+        <!-- Artículos Destacados -->
+        {articulosDestacados.length > 0 && (
+          <div class="featured-section">
+            <div class="section-header">
+              <h2 class="section-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+                Artículos Destacados
+              </h2>
+            </div>
+
+            <div class="featured-grid">
+              {articulosDestacados.map((articulo, index) => (
+                <article class="featured-card" data-main={index === 0}>
+                  <div class="card-image">
+                    <img src={articulo.imagen} alt={articulo.titulo} />
+                    <div class="image-overlay"></div>
+                    
+                    <!-- Badges -->
+                    <div class="image-badges">
+                      <span class="category-badge">{articulo.categoria}</span>
+                      <span class="featured-badge">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                        Destacado
+                      </span>
+                    </div>
+
+                    <!-- Info flotante -->
+                    <div class="floating-info">
+                      <div class="autor-mini">
+                        <div class="avatar">{articulo.autor.avatar}</div>
+                        <span>{articulo.autor.nombre}</span>
+                      </div>
+                      <div class="meta-mini">
+                        <span class="reading-time">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                          </svg>
+                          {articulo.tiempoLectura}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card-content">
+                    <h3 class="card-title">
+                      <a href={`/blog/${articulo.slug}`}>{articulo.titulo}</a>
+                    </h3>
+                    <p class="card-excerpt">{articulo.extracto}</p>
+                    
+                    <div class="card-footer">
+                      <div class="tags">
+                        {articulo.tags.slice(0, 3).map((tag) => (
+                          <span class="tag">#{tag}</span>
+                        ))}
+                      </div>
+                      <a href={`/blog/${articulo.slug}`} class="read-more">
+                        <span>Leer más</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- Grid de Artículos Recientes -->
+        <div class="articles-section">
+          <div class="section-header">
+            <h2 class="section-title">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+              Últimos Artículos
+            </h2>
+          </div>
+
+          <div class="articles-grid">
+            {articulosRecientes.map((articulo) => (
+              <article class="article-card">
+                <div class="card-image-small">
+                  <img src={articulo.imagen} alt={articulo.titulo} />
+                  <span class="category-label">{articulo.categoria}</span>
+                </div>
+
+                <div class="card-content-small">
+                  <div class="card-meta">
+                    <div class="autor-info">
+                      <div class="avatar-small">{articulo.autor.avatar}</div>
+                      <span class="autor-nombre">{articulo.autor.nombre}</span>
+                    </div>
+                    <span class="fecha">{new Date(articulo.fecha).toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
+                  </div>
+
+                  <h3 class="card-title-small">
+                    <a href={`/blog/${articulo.slug}`}>{articulo.titulo}</a>
+                  </h3>
+                  
+                  <p class="card-excerpt-small">{articulo.extracto}</p>
+
+                  <div class="card-footer-small">
+                    <div class="stats">
+                      <span class="stat-item">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        {articulo.tiempoLectura}
+                      </span>
+                      <span class="stat-item">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                          <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        {articulo.vistas}
+                      </span>
+                      <span class="stat-item">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        {articulo.comentarios}
+                      </span>
+                    </div>
+                    <a href={`/blog/${articulo.slug}`} class="read-more-btn">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="blog-sidebar">
+        <!-- Newsletter -->
+        <div class="sidebar-widget newsletter-widget">
+          <div class="widget-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+          <h3 class="widget-title">Newsletter</h3>
+          <p class="widget-text">Recibe guías exclusivas y tips de viaje directo en tu email</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="tu@email.com" required />
+            <button type="submit" class="subscribe-btn">
+              Suscribirse
+            </button>
+          </form>
+        </div>
+
+        
+
+        <!-- Tags Populares -->
+        <div class="sidebar-widget">
+          <h3 class="widget-title">Tags Populares</h3>
+          <div class="tags-cloud">
+            <a href="#" class="tag-cloud">#Camino Inca</a>
+            <a href="#" class="tag-cloud">#Machu Picchu</a>
+            <a href="#" class="tag-cloud">#Trekking</a>
+            <a href="#" class="tag-cloud">#Cusco</a>
+            <a href="#" class="tag-cloud">#Salkantay</a>
+            <a href="#" class="tag-cloud">#Preparación</a>
+            <a href="#" class="tag-cloud">#Aventura</a>
+            <a href="#" class="tag-cloud">#Historia</a>
+          </div>
+        </div>
+
+        <!-- Social Media -->
+        <div class="sidebar-widget social-widget">
+          <h3 class="widget-title">Síguenos</h3>
+          <div class="social-grid">
+            <a href="#" class="social-link" data-social="instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              <span>Instagram</span>
+            </a>
+            <a href="#" class="social-link" data-social="facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+              <span>Facebook</span>
+            </a>
+            <a href="#" class="social-link" data-social="youtube">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="white"></polygon>
+              </svg>
+              <span>YouTube</span>
+            </a>
+            <a href="#" class="social-link" data-social="tiktok">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+              </svg>
+              <span>TikTok</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .blog-section {
+    background: #ffffff;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Layout */
+  .blog-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 4rem;
+    padding: 4rem 0;
+  }
+
+  /* Section Headers */
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #073642;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .section-title svg {
+    color: #ff8a2b;
+  }
+
+  /* Featured Grid */
+  .featured-section {
+    margin-bottom: 4rem;
+  }
+
+  .featured-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .featured-card {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .featured-card[data-main="true"] {
+    grid-row: span 2;
+  }
+
+  .featured-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+  }
+
+  .card-image {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    background: #f0f0f0;
+  }
+
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .featured-card[data-main="true"] .card-image {
+    height: 450px;
+  }
+
+  .image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 60%);
+  }
+
+  .image-badges {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    z-index: 5;
+  }
+
+  .category-badge {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    color: #073642;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .featured-badge {
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .floating-info {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+  }
+
+  .autor-mini {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #073642;
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #ff8a2b, #ff6b35);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 800;
+  }
+
+  .meta-mini {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .reading-time {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #073642;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .reading-time svg {
+    color: #ff8a2b;
+  }
+
+  .card-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #073642;
+    line-height: 1.3;
+  }
+
+  .featured-card[data-main="true"] .card-title {
+    font-size: 2rem;
+  }
+
+  .card-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .card-title a:hover {
+    color: #ff8a2b;
+  }
+
+  .card-excerpt {
+    color: #666;
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    color: #ff8a2b;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .read-more {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #073642;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .read-more:hover {
+    color: #ff8a2b;
+    gap: 0.8rem;
+  }
+
+  /* Articles Grid */
+  .articles-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .article-card {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .article-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  .card-image-small {
+    position: relative;
+    height: 140px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #f0f0f0;
+  }
+
+  .card-image-small img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .category-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #073642;
+  }
+
+  .card-content-small {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .autor-info {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .avatar-small {
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, #ff8a2b, #ff6b35);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 800;
+  }
+
+  .autor-nombre {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #073642;
+  }
+
+  .fecha {
+    font-size: 0.8rem;
+    color: #999;
+  }
+
+  .card-title-small {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #073642;
+    line-height: 1.3;
+  }
+
+  .card-title-small a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .card-title-small a:hover {
+    color: #ff8a2b;
+  }
+
+  .card-excerpt-small {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .card-footer-small {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+  }
+
+  .stats {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    color: #666;
+    font-weight: 600;
+  }
+
+  .stat-item svg {
+    color: #ff8a2b;
+  }
+
+  .read-more-btn {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #ff8a2b, #ff6b35);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .read-more-btn:hover {
+    transform: translateX(4px) scale(1.1);
+    box-shadow: 0 4px 15px rgba(255, 138, 43, 0.4);
+  }
+
+  /* Sidebar */
+  .blog-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
+  }
+
+  .sidebar-widget {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  }
+
+  .newsletter-widget {
+    background: linear-gradient(135deg, #073642 0%, #0d5b59 100%);
+    color: white;
+    text-align: center;
+  }
+
+  .widget-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: #ffd700;
+  }
+
+  .widget-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #073642;
+    margin-bottom: 1rem;
+  }
+
+  .newsletter-widget .widget-title {
+    color: white;
+  }
+
+  .widget-text {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .newsletter-form input {
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    padding: 0.9rem 1.2rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    color: #333;
+  }
+
+  .subscribe-btn {
+    background: linear-gradient(135deg, #ffd700, #ff8a2b);
+    color: #333;
+    border: none;
+    padding: 0.9rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .subscribe-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+  }
+
+  .widget-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .widget-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #073642;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .widget-list-item:hover {
+    background: #ff8a2b;
+    color: white;
+    transform: translateX(4px);
+  }
+
+  .item-count {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 0.2rem 0.6rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+  }
+
+  .tags-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .tag-cloud {
+    background: #f8f9fa;
+    color: #073642;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .tag-cloud:hover {
+    background: #ff8a2b;
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  .social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.8rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #073642;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+  }
+
+  .social-link[data-social="instagram"]:hover {
+    background: #e4405f;
+    color: white;
+  }
+
+  .social-link[data-social="facebook"]:hover {
+    background: #1877f2;
+    color: white;
+  }
+
+  .social-link[data-social="youtube"]:hover {
+    background: #ff0000;
+    color: white;
+  }
+
+  .social-link[data-social="tiktok"]:hover {
+    background: #000000;
+    color: white;
+  }
+
+  /* Responsive */
+  @media (max-width: 1200px) {
+    .blog-layout {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .blog-sidebar {
+      position: static;
+      grid-template-columns: repeat(2, 1fr);
+      display: grid;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .featured-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .featured-card[data-main="true"] {
+      grid-row: span 1;
+    }
+
+    .article-card {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .card-image-small {
+      height: 200px;
+    }
+
+    .blog-sidebar {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      padding: 0 1rem;
+    }
+
+    .featured-card .card-image {
+      height: 250px;
+    }
+  }
+</style>

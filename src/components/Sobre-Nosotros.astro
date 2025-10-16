@@ -1,0 +1,761 @@
+---
+// AboutUs.astro - Sakura Expeditions
+const stats = [
+  { number: "10+", label: "Años de Experiencia", icon: "award" },
+  { number: "12,000+", label: "Viajeros Felices", icon: "users" },
+  { number: "4.8★", label: "Calificación Promedio", icon: "star" },
+  { number: "98%", label: "Satisfacción Cliente", icon: "heart" }
+];
+
+const valores = [
+  {
+    icon: "shield",
+    titulo: "Seguridad Garantizada",
+    descripcion: "Tu seguridad es nuestra prioridad. Protocolos estrictos y seguro completo incluido."
+  },
+  {
+    icon: "leaf",
+    titulo: "Turismo Sostenible",
+    descripcion: "Comprometidos con el medio ambiente y las comunidades locales."
+  },
+  {
+    icon: "users",
+    titulo: "Grupos Pequeños",
+    descripcion: "Experiencias personalizadas con atención dedicada para cada viajero."
+  },
+  {
+    icon: "certificate",
+    titulo: "Guías Certificados",
+    descripcion: "Profesionales expertos con amplio conocimiento de historia y cultura."
+  }
+];
+
+const certificaciones = [
+  { nombre: "Ministerio de Turismo", logo: "🏛️" },
+  { nombre: "TripAdvisor Excellence", logo: "🏆" },
+  { nombre: "Safe Travels", logo: "✓" },
+  { nombre: "Sustainable Tourism", logo: "🌿" }
+];
+
+---
+
+<section class="about-section" id="sobre-nosotros">
+  <!-- Hero About -->
+  <div class="about-hero">
+    <div class="hero-background">
+      <img src="../../public/grupal2026.jpg" alt="Sakura Expeditions Team" />
+      <div class="hero-overlay"></div>
+    </div>
+    
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-badge">Desde 2015</span>
+        <h1 class="hero-title">
+          Sobre <span class="highlight">Sakura Expeditions</span>
+        </h1>
+        <p class="hero-subtitle">
+          Creando experiencias inolvidables en el corazón de los Andes peruanos
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nuestra Historia -->
+  <div class="story-section">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-image">
+          <div class="image-wrapper">
+            <img src="../../public/grupal2026.jpg" alt="Equipo Sakura" />
+            <div class="image-badge">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+              <span>Premiados 2024</span>
+            </div>
+          </div>
+          
+          <!-- Decorative elements -->
+          <div class="decorative-circle circle-1"></div>
+          <div class="decorative-circle circle-2"></div>
+        </div>
+
+        <div class="story-content">
+          <span class="section-badge">Nuestra Historia</span>
+          <h2 class="section-title">
+            Pasión por la Aventura <br />
+            <span class="highlight">Desde el Primer Día</span>
+          </h2>
+          
+          <div class="story-text">
+            <p>
+              Fundada en 2010, <strong>Sakura Expeditions</strong> nació del sueño de compartir la magia de los Andes peruanos con viajeros de todo el mundo. Lo que comenzó como una pequeña empresa familiar, ha crecido hasta convertirse en una de las operadoras más confiables y respetadas de Cusco.
+            </p>
+            <p>
+              Nuestro nombre, <em>Sakura</em> (flor de cerezo en japonés), simboliza la belleza efímera y preciosa de cada momento en la montaña. Cada trek es único, cada amanecer irrepetible, y nos esforzamos por hacer que cada experiencia sea tan memorable como la floración del cerezo.
+            </p>
+            <p>
+              Con más de 15 años de experiencia, hemos guiado a más de 12,000 aventureros por los caminos incas, compartiendo no solo rutas, sino historias, cultura y momentos que perduran para toda la vida.
+            </p>
+          </div>
+
+          <!-- Mission & Vision -->
+          <div class="mission-vision">
+            <div class="mission-box">
+              <div class="box-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M12 16v-4"></path>
+                  <path d="M12 8h.01"></path>
+                </svg>
+              </div>
+              <div>
+                <h3>Misión</h3>
+                <p>Ofrecer experiencias auténticas y seguras, conectando a los viajeros con la magnificencia de los Andes y la rica cultura peruana.</p>
+              </div>
+            </div>
+            
+            <div class="mission-box">
+              <div class="box-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3>Visión</h3>
+                <p>Ser líderes en turismo sostenible en Perú, reconocidos por nuestra excelencia, responsabilidad ambiental y compromiso social.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats Counter -->
+  <div class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        {stats.map((stat) => (
+          <div class="stat-card">
+            <div class="stat-icon">
+              {stat.icon === 'award' && (
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="8" r="7"></circle>
+                  <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                </svg>
+              )}
+              {stat.icon === 'users' && (
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              )}
+              {stat.icon === 'star' && (
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+              )}
+              {stat.icon === 'heart' && (
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+              )}
+            </div>
+            <div class="stat-number">{stat.number}</div>
+            <div class="stat-label">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- Nuestros Valores -->
+  <div class="valores-section">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-badge">Lo Que Nos Define</span>
+        <h2 class="section-title">
+          Nuestros <span class="highlight">Valores</span>
+        </h2>
+        <p class="section-description">
+          Principios que guían cada expedición y cada decisión que tomamos
+        </p>
+      </div>
+
+      <div class="valores-grid">
+        {valores.map((valor) => (
+          <div class="valor-card">
+            <div class="valor-icon">
+              {valor.icon === 'shield' && (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              )}
+              {valor.icon === 'leaf' && (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+                  <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                </svg>
+              )}
+              {valor.icon === 'users' && (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              )}
+              {valor.icon === 'certificate' && (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="10" r="8"></circle>
+                  <path d="M12 2v8"></path>
+                  <path d="M12 18v4"></path>
+                  <path d="m4.93 4.93 4.24 4.24"></path>
+                  <path d="m14.83 14.83 4.24 4.24"></path>
+                  <path d="M2 12h8"></path>
+                  <path d="M14 12h8"></path>
+                  <path d="m4.93 19.07 4.24-4.24"></path>
+                  <path d="m14.83 9.17 4.24-4.24"></path>
+                </svg>
+              )}
+            </div>
+            <h3 class="valor-titulo">{valor.titulo}</h3>
+            <p class="valor-descripcion">{valor.descripcion}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- Certificaciones -->
+  <div class="certificaciones-section">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-badge">Reconocimientos</span>
+        <h2 class="section-title">
+          Certificaciones y <span class="highlight">Premios</span>
+        </h2>
+      </div>
+
+      <div class="certificaciones-grid">
+        {certificaciones.map((cert) => (
+          <div class="cert-card">
+            <div class="cert-logo">{cert.logo}</div>
+            <div class="cert-nombre">{cert.nombre}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  
+</section>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .about-section {
+    background: #ffffff;
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Hero About */
+  .about-hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(13, 95, 95, 0.9) 0%,
+      rgba(7, 54, 66, 0.85) 100%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255, 138, 43, 0.9);
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(255, 138, 43, 0.3);
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 900;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-title .highlight {
+    background: linear-gradient(135deg, #ffd700, #ff8a2b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 300;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* Story Section */
+  .story-section {
+    padding: 6rem 0;
+    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+  }
+
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .story-image {
+    position: relative;
+  }
+
+  .image-wrapper {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  }
+
+  .image-wrapper img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .image-badge {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: #333;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-weight: 700;
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+  }
+
+  .decorative-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255, 138, 43, 0.1), rgba(255, 215, 0, 0.1));
+    z-index: -1;
+  }
+
+  .circle-1 {
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    left: -50px;
+  }
+
+  .circle-2 {
+    width: 200px;
+    height: 200px;
+    bottom: -50px;
+    right: -50px;
+  }
+
+  .story-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .section-badge {
+    display: inline-block;
+    color: #ff8a2b;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #073642;
+    line-height: 1.2;
+  }
+
+  .section-title .highlight {
+    background: linear-gradient(135deg, #ff8a2b, #d32f2f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .story-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .story-text p {
+    color: #555;
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  .story-text strong {
+    color: #073642;
+    font-weight: 700;
+  }
+
+  .story-text em {
+    color: #ff8a2b;
+    font-style: italic;
+  }
+
+  /* Mission Vision */
+  .mission-vision {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .mission-box {
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    padding: 2rem;
+    border-radius: 20px;
+    border-left: 4px solid #ff8a2b;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  .box-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ff8a2b, #ff6b35);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: white;
+  }
+
+  .mission-box h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #073642;
+    margin-bottom: 0.5rem;
+  }
+
+  .mission-box p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  /* Stats Section */
+  .stats-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #073642 0%, #0d5b59 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stats-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 100px,
+      rgba(255, 255, 255, 0.03) 100px,
+      rgba(255, 255, 255, 0.03) 200px
+    );
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .stat-card {
+    text-align: center;
+    color: white;
+  }
+
+  .stat-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: #ffd700;
+    transition: all 0.3s ease;
+  }
+
+  .stat-card:hover .stat-icon {
+    transform: translateY(-5px) scale(1.1);
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .stat-number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #ffd700;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  /* Valores Section */
+  .valores-section {
+    padding: 6rem 0;
+    background: #ffffff;
+  }
+
+  .section-header-center {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 4rem;
+  }
+
+  .section-description {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-top: 1rem;
+  }
+
+  .valores-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .valor-card {
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .valor-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    border-color: #ff8a2b;
+  }
+
+  .valor-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #ff8a2b, #ff6b35);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: white;
+    transition: all 0.3s ease;
+  }
+
+  .valor-card:hover .valor-icon {
+    transform: rotateY(360deg);
+  }
+
+  .valor-titulo {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #073642;
+    margin-bottom: 0.8rem;
+  }
+
+  .valor-descripcion {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Certificaciones */
+  .certificaciones-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #f8f9fa, #e8f0f5);
+  }
+
+  .certificaciones-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .cert-card {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+  }
+
+  .cert-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  }
+
+  .cert-logo {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .cert-nombre {
+    font-weight: 700;
+    color: #073642;
+    font-size: 0.95rem;
+  }
+
+ 
+
+  /* Responsive */
+  @media (max-width: 1200px) {
+    .story-grid {
+      gap: 3rem;
+    }
+
+    .valores-grid,
+    .certificaciones-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .story-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .story-image {
+      order: -1;
+    }
+
+    .image-wrapper img {
+      height: 400px;
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .valores-grid,
+    .certificaciones-grid,
+    .team-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn {
+      width: 100%;
+      max-width: 300px;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .about-hero {
+      min-height: 50vh;
+    }
+
+    .hero-content {
+      padding: 3rem 1rem;
+    }
+
+    .stats-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+    }
+  }
+</style>

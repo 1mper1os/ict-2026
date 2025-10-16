@@ -1,22 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import Tours from '../components/Tours.astro';
-import Features from '../components/Features.astro';
-import CTA from '../components/CTA.astro';
+import Portada from '../components/Portada.astro';
+import Section1 from '../components/Section1.astro';
+import Section2 from '../components/Section2.astro';
+import Section3 from '../components/Section3.astro';
+import SobreNosotros from '../components/Sobre-Nosotros.astro';
+import Blog from '../components/Blog.astro';
+import Beneficios from '../components/Beneficios.astro';
+
 ---
 
-<Layout title="Camino Inca & Machu Picchu Tours - Experiencia Inolvidable">
-  <Hero />
-  <Tours />
-  <Features />
-  <CTA />
+<Layout title="Camino Inca & Machu Picchu Tours">
+  <Portada/>
+  <Section1 />
+  <Section2 />
+  <Section3/>
+  <SobreNosotros/>
+  <Blog/>
+  <Beneficios />
 </Layout>
 
 <style is:global>
-  body {
+  *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   }
 </style>
