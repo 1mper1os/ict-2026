@@ -1,12 +1,12 @@
 ---
-// CaminoIncaSection.astro - Versión Mejorada
+// CaminoIncaSection.astro - Versión Mejorada con Slugs
 const tours = [
   {
-    title: "CAMINO INCA 2 DÍAS",
-    description: "Experimenta la caminata más famosa de Sudamérica. Recorre antiguos senderos incas y descubre paisajes impresionantes.",
+    title: "INCA TRAIL 2 DAYS",
+    description: "Experience the most famous hike in South America. Walk ancient Inca trails and discover breathtaking landscapes.",
     image: "../../public/2146185.jpg",
-    badge: "MÁS POPULAR",
-    difficulty: "Moderado",
+    badge: "MOST POPULAR",
+    difficulty: "Moderate",
     reviews: 328,
     locations: [
       "Cusco",
@@ -19,18 +19,20 @@ const tours = [
       "Machu Picchu",
       "Aguas Calientes"
     ],
-    days: "2 días",
-    nights: "1 noche",
+    days: "2 days",
+    nights: "1 night",
     price: "465.00",
     oldPrice: "510.00",
-    included: ["Briefing","Guía profesional", "Transporte", "Tren", "Ingresos","Hotel"]
+    included: ["Briefing","Professional Guide","Transportation","Train","Admissions","Hotel"],
+    slug: "https://sakuraexpeditions.com/2-days-short-inca-trail/",
+    bookingSlug: "https://sakuraexpeditions.com/booking/?id=38"
   },
   {
-    title: "CAMINO INCA EXPRESS",
-    description: "Versión corta del clásico Camino Inca. Ideal para quienes tienen tiempo limitado pero no quieren perderse la experiencia.",
+    title: "INCA TRAIL EXPRESS",
+    description: "Short version of the classic Inca Trail. Ideal for those with limited time but don't want to miss the experience.",
     image: "../../public/4894.jpg",
-    badge: "MEJOR OFERTA",
-    difficulty: "Fácil",
+    badge: "BEST DEAL",
+    difficulty: "Easy",
     reviews: 215,
     locations: [
       "Cusco",
@@ -43,18 +45,20 @@ const tours = [
       "Machu Picchu",
       "Aguas Calientes"
     ],
-    days: "1 día",
+    days: "1 day",
     nights: "",
     price: "380.00",
     oldPrice: "430.00",
-    included: ["Briefing","Guía profesional", "Transporte","Tren", "Box Lunch"]
+    included: ["Briefing","Professional Guide","Transportation","Train","Box Lunch"],
+    slug: "https://sakuraexpeditions.com/inca-trail-express-full-day/",
+    bookingSlug: "https://wa.link/obdnm6"
   },
   {
-    title: "CAMINO INCA 4 DÍAS",
-    description: "La ruta original completa con todos los sitios arqueológicos. Una aventura inolvidable por la historia inca.",
+    title: "INCA TRAIL 4 DAYS",
+    description: "The complete original route with all the archaeological sites. An unforgettable adventure through Inca history.",
     image: "../../public/inti-punku-vistas-1_65_11zon.webp",
-    badge: "AVENTURA COMPLETA",
-    difficulty: "Desafiante",
+    badge: "COMPLETE ADVENTURE",
+    difficulty: "Moderate",
     reviews: 442,
     locations: [
       "Cusco",
@@ -67,11 +71,13 @@ const tours = [
       "Machu Picchu",
       "Aguas Calientes"
     ],
-    days: "4 días",
-    nights: "3 noches",
+    days: "4 days",
+    nights: "3 nights",
     price: "690.00",
     oldPrice: "750.00",
-    included: ["Briefing","Guía experto","Transporte", "Tren", "Todo incluido", "Camping premium", "Entrada MP"]
+    included: ["Briefing","Expert Guide","Transportation","Train","All Inclusive","Premium Camping","MP Admission"],
+    slug: "https://sakuraexpeditions.com/inca-trail-to-machu-picchu-4-days/",
+    bookingSlug: "https://sakuraexpeditions.com/booking/?id=31"
   }
 ];
 ---
@@ -79,12 +85,12 @@ const tours = [
 <section class="camino-inca-section" id="camino-inca">
   <div class="container">
     <div class="section-header">
-      <span class="subtitle">Descubre las mejores rutas</span>
+      <span class="subtitle">Discover the best routes</span>
       <h2 class="section-title">
-        CAMINATAS DISPONIBLES DEL <span class="highlight">CAMINO INCA</span>
+        AVAILABLE WALKS OF THE <span class="highlight">INCA TRAIL 2026</span>
       </h2>
       <p class="section-description">
-        Elige tu aventura ideal hacia Machu Picchu. Todas nuestras rutas incluyen guías certificados y equipamiento de primera calidad.
+        Choose your ideal adventure to Machu Picchu. All our tours include certified guides and top-quality equipment.
       </p>
     </div>
 
@@ -96,7 +102,9 @@ const tours = [
 
           <!-- Imagen con overlay -->
           <div class="card-image-wrapper">
-            <img src={tour.image} alt={tour.title} class="card-image" />
+            <a href={tour.slug}>
+              <img src={tour.image} alt={tour.title} class="card-image" />
+            </a>
             <div class="image-overlay">
               <div class="difficulty-badge" data-difficulty={tour.difficulty.toLowerCase()}>
                 {tour.difficulty}
@@ -108,8 +116,9 @@ const tours = [
           <div class="card-content">
             <!-- Header con título  -->
             <div class="card-header-info">
-              <h3 class="card-title">{tour.title}</h3>
-              
+              <a href={tour.slug} class="title-link">
+                <h3 class="card-title">{tour.title}</h3>
+              </a>
             </div>
 
             <!-- Descripción -->
@@ -165,21 +174,21 @@ const tours = [
 
             <!-- Botones de acción -->
             <div class="card-actions">
-              <button class="btn btn-outline">
+              <a href={tour.slug} class="btn btn-outline">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <circle cx="12" cy="12" r="10"></circle>
                   <line x1="12" y1="16" x2="12" y2="12"></line>
                   <line x1="12" y1="8" x2="12.01" y2="8"></line>
                 </svg>
-                Ver Detalles
-              </button>
-              <button class="btn btn-primary">
+                SEE DETAILS
+              </a>
+              <a href={tour.bookingSlug} class="btn btn-primary">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M5 12h14"></path>
                   <path d="M12 5l7 7-7 7"></path>
                 </svg>
-                Reservar Ahora
-              </button>
+                Book Now
+              </a>
             </div>
           </div>
 
@@ -236,7 +245,7 @@ const tours = [
   .section-title {
     font-size: clamp(1.8rem, 4vw, 2.8rem);
     font-weight: 800;
-    color: #0d5f5f;
+    color: #002b4f;
     margin-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: -0.5px;
@@ -358,29 +367,29 @@ const tours = [
     letter-spacing: 2px;
   }
 
-  .difficulty-badge[data-difficulty="fácil"] {
+  .difficulty-badge[data-difficulty="easy"] {
     color: #4caf50;
   }
 
-  .difficulty-badge[data-difficulty="fácil"]::before {
+  .difficulty-badge[data-difficulty="easy"]::before {
     content: '●○○';
     color: #4caf50;
   }
 
-  .difficulty-badge[data-difficulty="moderado"] {
+  .difficulty-badge[data-difficulty="moderate"] {
     color: #ff9800;
   }
 
-  .difficulty-badge[data-difficulty="moderado"]::before {
+  .difficulty-badge[data-difficulty="moderate"]::before {
     content: '●●○';
     color: #ff9800;
   }
 
-  .difficulty-badge[data-difficulty="desafiante"] {
+  .difficulty-badge[data-difficulty="challenging"] {
     color: #d32f2f;
   }
 
-  .difficulty-badge[data-difficulty="desafiante"]::before {
+  .difficulty-badge[data-difficulty="challenging"]::before {
     content: '●●●';
     color: #d32f2f;
   }
@@ -398,13 +407,11 @@ const tours = [
   .card-title {
     font-size: 1.1rem;
     font-weight: 700;
-    color: #0d5f5f;
+    color: #002b4f;
     letter-spacing: 0.3px;
     margin-bottom: 0.5rem;
     line-height: 1.3;
   }
-
-  
 
   /* Descripción */
   .card-description {
@@ -432,14 +439,14 @@ const tours = [
   }
 
   .duration-box svg {
-    color: #0d5f5f;
+    color: #002b4f;
     flex-shrink: 0;
   }
 
   .duration-days {
     font-size: 1.1rem;
     font-weight: 700;
-    color: #0d5f5f;
+    color: #002b4f;
     line-height: 1;
   }
 
@@ -493,7 +500,7 @@ const tours = [
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 0.8rem;
-    color: #0d5f5f;
+    color: #002b4f;
     font-weight: 600;
     font-size: 0.85rem;
   }
@@ -533,7 +540,7 @@ const tours = [
   .included-title {
     font-size: 0.85rem;
     font-weight: 600;
-    color: #0d5f5f;
+    color: #002b4f;
     margin-bottom: 0.7rem;
   }
 
@@ -545,7 +552,7 @@ const tours = [
 
   .included-tag {
     background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
-    color: #2e7d32;
+    color: #002b4f;
     padding: 0.4rem 0.8rem;
     border-radius: 6px;
     font-size: 0.75rem;
@@ -573,6 +580,7 @@ const tours = [
     letter-spacing: 0.5px;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-decoration: none;
   }
 
   .btn svg {
@@ -582,12 +590,12 @@ const tours = [
 
   .btn-outline {
     background: white;
-    color: #0d5f5f;
-    border: 2px solid #0d5f5f;
+    color: #002b4f;
+    border: 2px solid #002b4f;
   }
 
   .btn-outline:hover {
-    background: #0d5f5f;
+    background: #002b4f;
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(13, 95, 95, 0.3);

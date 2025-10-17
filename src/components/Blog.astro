@@ -3,96 +3,91 @@
 const articulos = [
   {
     id: 1,
-    titulo: "Guía Completa para el Camino Inca: Todo lo que Necesitas Saber",
-    slug: "guia-completa-camino-inca",
-    extracto: "Descubre todo sobre el trek más famoso de Sudamérica. Desde permisos hasta el mejor equipamiento, te contamos todo lo necesario para una experiencia inolvidable.",
+    titulo: "Inca Trail 2026: Everything you need to know to book",
+    slug: "https://sakuraexpeditions.com/blogs/inca-trail-2026-availability/",
+    extracto: "The 2026 Inca Trail has limited availability (500 daily spots, including support staff) and high demand, so it is recommended to book 4 to 8 months in advance through an authorized operator, especially for the dry season (May to October).",
     imagen: "/2146185.jpg",
-    categoria: "Guías de Viaje",
+    categoria: "travel guides",
     autor: {
       nombre: "Maryori Mejia",
-      avatar: "CM",
-      rol: "Guía Principal"
+      rol: "travel guides"
     },
     fecha: "2025-01-15",
     tiempoLectura: "12 min",
     destacado: true,
-    tags: ["Camino Inca", "Trekking", "Machu Picchu"],
+    tags: ["Inka Trail", "Trekking", "Machu Picchu"],
     vistas: 2543,
     comentarios: 28
   },
   {
     id: 2,
-    titulo: "10 Consejos Esenciales para Aclimatarse en Cusco",
+    titulo: "10 Essential Tips for Acclimatizing in Cusco",
     slug: "consejos-aclimatacion-cusco",
-    extracto: "La altura de Cusco puede ser un desafío. Aprende cómo prepararte correctamente y evitar el mal de altura para disfrutar al máximo tu aventura.",
+    extracto: "Cusco's altitude can be a challenge. Learn how to properly prepare and avoid altitude sickness to enjoy your adventure to the fullest.",
     imagen: "/4894.jpg",
-    categoria: "Tips & Consejos",
+    categoria: "Tips & Advice",
     autor: {
       nombre: "Maryori Mejia",
-      avatar: "RQ",
-      rol: "Guía Certificado"
+      rol: "travel guides"
     },
     fecha: "2025-01-05",
     tiempoLectura: "6 min",
     destacado: false,
-    tags: ["Cusco", "Salud", "Aclimatación"],
+    tags: ["Cusco", "Health", "Acclimatization"],
     vistas: 1654,
     comentarios: 22
   },
   {
     id: 3,
-    titulo: "Mejor Época para Visitar Machu Picchu: Guía Completa 2025",
+    titulo: "Best Time to Visit Machu Picchu: Complete Guide 2026",
     slug: "mejor-epoca-machu-picchu",
     extracto: "Planifica tu viaje en el momento perfecto. Analizamos clima, temporadas alta y baja, y los mejores meses para visitar la maravilla del mundo.",
     imagen: "/Camino-Inca-2-Dias.webp",
-    categoria: "Planificación",
+    categoria: "Planning",
     autor: {
       nombre: "Maryori Mejia",
-      avatar: "AT",
-      rol: "Asesora de Viajes"
+      rol: "travel guides"
     },
     fecha: "2024-12-28",
     tiempoLectura: "10 min",
     destacado: false,
-    tags: ["Machu Picchu", "Clima", "Planificación"],
+    tags: ["Machu Picchu", "Weather", "Planning"],
     vistas: 3421,
     comentarios: 35
   },
   {
     id: 4,
-    titulo: "Qué Llevar en tu Mochila para el Camino Inca: Lista Definitiva",
+    titulo: "What to Pack in Your Backpack for the Inca Trail: The Ultimate List",
     slug: "que-llevar-camino-inca",
-    extracto: "La lista definitiva de equipamiento para tu trek. Desde lo esencial hasta los extras que marcan la diferencia en tu experiencia de 4 días.",
+    extracto: "The ultimate gear list for your trek. From the essentials to the Extras that make a difference in your 4-day experience.",
     imagen: "/Camino-Inca-4-Dias.webp",
-    categoria: "Equipamiento",
+    categoria: "Equipment",
     autor: {
       nombre: "Maryori Mejia",
-      avatar: "CM",
-      rol: "Guía Principal"
+      rol: "travel guides"
     },
     fecha: "2024-12-20",
     tiempoLectura: "9 min",
     destacado: false,
-    tags: ["Equipamiento", "Camino Inca", "Preparación"],
+    tags: ["Equipment", "Inca Trail", "Preparation"],
     vistas: 2156,
     comentarios: 31
   },
   {
     id: 5,
-    titulo: "Historia y Misterios del Camino Inca: Un Viaje en el Tiempo",
+    titulo: "History and Mysteries of the Inca Trail: A Journey Through Time",
     slug: "historia-camino-inca",
-    extracto: "Explora los secretos ancestrales del Qhapaq Ñan. Descubre la ingeniería inca, los sitios arqueológicos y las leyendas que rodean este camino sagrado.",
+    extracto: "Explore the ancient secrets of the Qhapaq Ñan. Discover Inca engineering, archaeological sites, and the legends surrounding this sacred path.",
     imagen: "/Camino-Inca-Express.webp",
-    categoria: "Historia & Cultura",
+    categoria: "History & Culture",
     autor: {
       nombre: "Maryori Mejia",
-      avatar: "LP",
-      rol: "Historiador"
+      rol: "travel guides"
     },
     fecha: "2024-12-15",
     tiempoLectura: "15 min",
     destacado: false,
-    tags: ["Historia", "Cultura Inca", "Arqueología"],
+    tags: ["History", "Inca Culture", "Archaeology"],
     vistas: 1789,
     comentarios: 18
   }
@@ -120,7 +115,7 @@ const articulosRecientes = articulos.filter(a => !a.destacado);
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                   <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
                 </svg>
-                Artículos Destacados
+                Featured Articles
               </h2>
             </div>
 
@@ -138,14 +133,14 @@ const articulosRecientes = articulos.filter(a => !a.destacado);
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                           <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
                         </svg>
-                        Destacado
+                        Outstanding
                       </span>
                     </div>
 
                     <!-- Info flotante -->
                     <div class="floating-info">
                       <div class="autor-mini">
-                        <div class="avatar">{articulo.autor.avatar}</div>
+                        
                         <span>{articulo.autor.nombre}</span>
                       </div>
                       <div class="meta-mini">
@@ -162,7 +157,7 @@ const articulosRecientes = articulos.filter(a => !a.destacado);
 
                   <div class="card-content">
                     <h3 class="card-title">
-                      <a href={`/blog/${articulo.slug}`}>{articulo.titulo}</a>
+                      <a href={`${articulo.slug}`}>{articulo.titulo}</a>
                     </h3>
                     <p class="card-excerpt">{articulo.extracto}</p>
                     
@@ -172,8 +167,8 @@ const articulosRecientes = articulos.filter(a => !a.destacado);
                           <span class="tag">#{tag}</span>
                         ))}
                       </div>
-                      <a href={`/blog/${articulo.slug}`} class="read-more">
-                        <span>Leer más</span>
+                      <a href={`${articulo.slug}`} class="read-more">
+                        <span>Read More</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                           <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
@@ -193,7 +188,7 @@ const articulosRecientes = articulos.filter(a => !a.destacado);
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
               </svg>
-              Últimos Artículos
+              Latest Articles
             </h2>
           </div>
 
@@ -208,14 +203,14 @@ const articulosRecientes = articulos.filter(a => !a.destacado);
                 <div class="card-content-small">
                   <div class="card-meta">
                     <div class="autor-info">
-                      <div class="avatar-small">{articulo.autor.avatar}</div>
+                     
                       <span class="autor-nombre">{articulo.autor.nombre}</span>
                     </div>
                     <span class="fecha">{new Date(articulo.fecha).toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
                   </div>
 
                   <h3 class="card-title-small">
-                    <a href={`/blog/${articulo.slug}`}>{articulo.titulo}</a>
+                    <a href={`${articulo.slug}`}>{articulo.titulo}</a>
                   </h3>
                   
                   <p class="card-excerpt-small">{articulo.extracto}</p>
@@ -269,11 +264,11 @@ const articulosRecientes = articulos.filter(a => !a.destacado);
             </svg>
           </div>
           <h3 class="widget-title">Newsletter</h3>
-          <p class="widget-text">Recibe guías exclusivas y tips de viaje directo en tu email</p>
+          <p class="widget-text">Receive exclusive guides and travel tips straight to your email.</p>
           <form class="newsletter-form">
-            <input type="email" placeholder="tu@email.com" required />
+            <input type="email" placeholder="your@email.com" required />
             <button type="submit" class="subscribe-btn">
-              Suscribirse
+              Subscribe
             </button>
           </form>
         </div>
@@ -282,22 +277,22 @@ const articulosRecientes = articulos.filter(a => !a.destacado);
 
         <!-- Tags Populares -->
         <div class="sidebar-widget">
-          <h3 class="widget-title">Tags Populares</h3>
+          <h3 class="widget-title">Popular Tags</h3>
           <div class="tags-cloud">
-            <a href="#" class="tag-cloud">#Camino Inca</a>
+            <a href="#" class="tag-cloud">#Inca Trail</a>
             <a href="#" class="tag-cloud">#Machu Picchu</a>
             <a href="#" class="tag-cloud">#Trekking</a>
             <a href="#" class="tag-cloud">#Cusco</a>
             <a href="#" class="tag-cloud">#Salkantay</a>
-            <a href="#" class="tag-cloud">#Preparación</a>
-            <a href="#" class="tag-cloud">#Aventura</a>
-            <a href="#" class="tag-cloud">#Historia</a>
+            <a href="#" class="tag-cloud">#Preparation</a>
+            <a href="#" class="tag-cloud">#Adventure</a>
+            <a href="#" class="tag-cloud">#History</a>
           </div>
         </div>
 
         <!-- Social Media -->
         <div class="sidebar-widget social-widget">
-          <h3 class="widget-title">Síguenos</h3>
+          <h3 class="widget-title">Follow Us</h3>
           <div class="social-grid">
             <a href="#" class="social-link" data-social="instagram">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
