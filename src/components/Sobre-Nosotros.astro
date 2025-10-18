@@ -230,25 +230,150 @@ const certificaciones = [
     </div>
   </div>
 
-  <!-- Certificaciones -->
-  <div class="certificaciones-section">
-    <div class="container">
-      <div class="section-header-center">
-        <span class="section-badge">Recognitions</span>
-        <h2 class="section-title">
-         Certifications and  <span class="highlight">Awards</span>
-        </h2>
+  <!-- Certificaciones y Premios - Galería de Fotos -->
+<div class="certificaciones-section">
+  <div class="container">
+    <div class="section-header-center">
+      <span class="section-badge">Official Recognitions</span>
+      <h2 class="section-title">
+        Certifications and <span class="highlight">Awards</span>
+      </h2>
+      <p class="section-description">
+        Official recognitions that endorse our quality and commitment
+      </p>
+    </div>
+
+    <div class="certifications-gallery">
+      <div class="cert-photo-card" data-cert="1">
+        <div class="cert-photo-wrapper">
+          <img src="../../public/Constancia-de-conformidad-sakura-expedition.jpeg" alt="Tourism Operator - Regional Government of Cusco" />
+          <div class="cert-overlay">
+            <div class="cert-info">
+              <h3>Tourism Operator</h3>
+              <p>Regional Government of Cusco</p>
+              <span class="cert-year">2021</span>
+            </div>
+            <button class="view-cert-btn">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+              </svg>
+              View Certificate
+            </button>
+          </div>
+        </div>
       </div>
 
-      <div class="certificaciones-grid">
-        {certificaciones.map((cert) => (
-          <div class="cert-card">
-            <div class="cert-logo">{cert.logo}</div>
-            <div class="cert-nombre">{cert.nombre}</div>
+      <div class="cert-photo-card" data-cert="2">
+        <div class="cert-photo-wrapper">
+          <img src="../../public/Certificado-Comunidad.jpg" alt="International Business Award 2024" />
+          <div class="cert-overlay">
+            <div class="cert-info">
+              <h3>International Award 2024</h3>
+              <p>Business Excellence</p>
+              <span class="cert-year">2024</span>
+            </div>
+            <button class="view-cert-btn">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+              </svg>
+              View Certificate
+            </button>
           </div>
-        ))}
+        </div>
+      </div>
+
+      <div class="cert-photo-card" data-cert="3">
+        <div class="cert-photo-wrapper">
+          <img src="../../public/Servicio-de-Areas-Naturales-sakura-expedition.jpeg" alt="SERNANP Authorization - Machu Picchu" />
+          <div class="cert-overlay">
+            <div class="cert-info">
+              <h3>SERNANP Authorization</h3>
+              <p>Machu Picchu Inca Trails</p>
+              <span class="cert-year">2023-2027</span>
+            </div>
+            <button class="view-cert-btn">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+              </svg>
+              View Certificate
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-photo-card" data-cert="4">
+        <div class="cert-photo-wrapper">
+          <img src="../../public/Comercio-exterior-y-turismo-sakura-expedition.jpeg" alt="Child Protection Code of Conduct" />
+          <div class="cert-overlay">
+            <div class="cert-info">
+              <h3>Foreign Trade & Tourism</h3>
+              <p>Code of Conduct ESNNA</p>
+              <span class="cert-year">2017</span>
+            </div>
+            <button class="view-cert-btn">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+              </svg>
+              View Certificate
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-photo-card" data-cert="5">
+        <div class="cert-photo-wrapper">
+          <img src="../../public/Contrato-de-servicios-turisticos-sakura-expedition.jpeg" alt="Tourist Services Contract SERNANP" />
+          <div class="cert-overlay">
+            <div class="cert-info">
+              <h3>Services Contract</h3>
+              <p>SERNANP Machu Picchu</p>
+              <span class="cert-year">2024</span>
+            </div>
+            <button class="view-cert-btn">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+              </svg>
+              View Certificate
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-photo-card" data-cert="6">
+        <div class="cert-photo-wrapper">
+          <img src="../../public/Licencia-de-Funcionamiento-sakura-expedition.jpeg" alt="Operating License - Municipality of Cusco" />
+          <div class="cert-overlay">
+            <div class="cert-info">
+              <h3>Operating License</h3>
+              <p>Municipality of Cusco</p>
+              <span class="cert-year">2018</span>
+            </div>
+            <button class="view-cert-btn">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+              </svg>
+              View Certificate
+            </button>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- Modal Lightbox para ver certificados en grande -->
+<div class="cert-modal" id="certModal">
+  <div class="modal-backdrop"></div>
+  <div class="modal-content">
+    <button class="modal-close">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <img id="modalImage" src="" alt="Certificate" />
+  </div>
+</div>
   </div>
 
   
@@ -756,4 +881,256 @@ const certificaciones = [
       font-size: 2.5rem;
     }
   }
+  /* Certificaciones Gallery */
+  .certificaciones-section {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #f8f9fa, #e8f0f5);
+  }
+
+  .certifications-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .cert-photo-card {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .cert-photo-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .cert-photo-wrapper {
+    position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    background: white;
+  }
+
+  .cert-photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .cert-photo-card:hover .cert-photo-wrapper img {
+    transform: scale(1.1);
+  }
+
+  .cert-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(7, 28, 66, 0) 0%,
+      rgba(7, 28, 66, 0.7) 50%,
+      rgba(7, 28, 66, 0.95) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .cert-photo-card:hover .cert-overlay {
+    opacity: 1;
+  }
+
+  .cert-info {
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .cert-info h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: white;
+  }
+
+  .cert-info p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.5rem;
+  }
+
+  .cert-year {
+    display: inline-block;
+    background: #cb9934;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  .view-cert-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    color: #073642;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: fit-content;
+  }
+
+  .view-cert-btn:hover {
+    background: #cb9934;
+    color: white;
+    transform: translateX(5px);
+  }
+
+  .view-cert-btn svg {
+    transition: transform 0.3s ease;
+  }
+
+  .view-cert-btn:hover svg {
+    transform: rotate(45deg);
+  }
+
+  /* Modal Lightbox */
+  .cert-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cert-modal.active {
+    display: flex;
+  }
+
+  .modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+  }
+
+  .modal-content {
+    position: relative;
+    z-index: 10000;
+    max-width: 90vw;
+    max-height: 90vh;
+    animation: modalZoom 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @keyframes modalZoom {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .modal-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 25px 100px rgba(0, 0, 0, 0.5);
+  }
+
+  .modal-close {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #073642;
+  }
+
+  .modal-close:hover {
+    background: #cb9934;
+    color: white;
+    transform: rotate(90deg);
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .certifications-gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .certifications-gallery {
+      grid-template-columns: 1fr;
+    }
+
+    .cert-overlay {
+      opacity: 1;
+      background: linear-gradient(
+        180deg,
+        rgba(7, 28, 66, 0) 30%,
+        rgba(7, 28, 66, 0.85) 100%
+      );
+    }
+  }
 </style>
+
+<script>
+  // JavaScript para el modal lightbox
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('certModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalClose = document.querySelector('.modal-close');
+    const modalBackdrop = document.querySelector('.modal-backdrop');
+    const certCards = document.querySelectorAll('.cert-photo-card');
+
+    certCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const img = card.querySelector('img');
+        modalImage.src = img.src;
+        modalImage.alt = img.alt;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    const closeModal = () => {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    modalClose.addEventListener('click', closeModal);
+    modalBackdrop.addEventListener('click', closeModal);
+
+    // Cerrar con ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+  });
+</script>
