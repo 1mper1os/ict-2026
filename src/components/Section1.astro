@@ -1,83 +1,104 @@
----
+7---
 // CaminoIncaSection.astro - Versión Mejorada con Slugs
 const tours = [
   {
-    title: "INCA TRAIL 2 DAYS",
-    description: "Experience the most famous hike in South America. Walk ancient Inca trails and discover breathtaking landscapes.",
-    image: "../../public/2146185.jpg",
+    title: "Super Sacred Valley & Inca Trail Connection 2 Days",
+    description: "Experience the perfect blend of culture, nature, and adventure on our Super Valley tour, combining the Sacred Valley’s wonders with the 2-day Inca Trail to Machu Picchu through the iconic Sun Gate.",
+    image: "../../public/chinchero-1.webp",
     badge: "MOST POPULAR",
     difficulty: "Moderate",
     reviews: 328,
     locations: [
-      "Cusco",
+      "Chinchero",
+      "Moray",
+      "Maras Salt Mines",
       "Ollantaytambo",
-      "Llactapata",
-      "Runkuracay",
-      "Sayacmarca",
-      "Phuyupatamarca",
+      "Cochabamba",
       "Wiñayhuayna",
-      "Machu Picchu",
-      "Aguas Calientes"
+      "Inti Punku",
+      "Aguas Calientes",
+      "Machu Picchu"
+
     ],
     days: "2 days",
     nights: "1 night",
-    price: "465.00",
-    oldPrice: "510.00",
-    included: ["Briefing","Professional Guide","Transportation","Train","Admissions","Hotel"],
-    slug: "https://sakuraexpeditions.com/2-days-short-inca-trail/",
-    bookingSlug: "https://sakuraexpeditions.com/booking/?id=38"
-  },
-  {
-    title: "INCA TRAIL EXPRESS",
-    description: "Short version of the classic Inca Trail. Ideal for those with limited time but don't want to miss the experience.",
-    image: "../../public/4894.jpg",
-    badge: "BEST DEAL",
-    difficulty: "Easy",
-    reviews: 215,
-    locations: [
-      "Cusco",
-      "Ollantaytambo",
-      "Llactapata",
-      "Runkuracay",
-      "Sayacmarca",
-      "Phuyupatamarca",
-      "Wiñayhuayna",
-      "Machu Picchu",
-      "Aguas Calientes"
-    ],
-    days: "1 day",
-    nights: "",
-    price: "380.00",
-    oldPrice: "430.00",
-    included: ["Briefing","Professional Guide","Transportation","Train","Box Lunch"],
-    slug: "https://sakuraexpeditions.com/inca-trail-express-full-day/",
+    price: "495.00",
+    oldPrice: "545.00",
+    included: ["Briefing","Professional Guide","Transportation","Train","Admissions","Hotel","Oxigen tank", "2 lunch"],
+    slug: "https://sakuraexpeditions.com/vip-sacred-valley-inca-trail-connection/",
     bookingSlug: "https://wa.link/obdnm6"
   },
   {
-    title: "INCA TRAIL 4 DAYS",
-    description: "The complete original route with all the archaeological sites. An unforgettable adventure through Inca history.",
-    image: "../../public/inti-punku-vistas-1_65_11zon.webp",
+    title: "INCA TRAIL & AMAZON ADVENTURE – 12 DAYS",
+    description: "Discover the best of Peru on a 12-day journey through Lima, Cusco, the legendary Inca Trail to Machu Picchu, and the Amazon rainforest of Puerto Maldonado—an unforgettable adventure blending history, nature, and soul.",
+    image: "../../public/Sacred-Valley-&-Camino-Inca-12-Days.jpg",
     badge: "COMPLETE ADVENTURE",
+    difficulty: "Moderate",
+    reviews: 215,
+    locations: [
+    "Plaza de Armas of Cusco",
+    "Stone of the 12 Angles",
+    "San Pedro Market",
+    "San Blas Neighborhood",
+    "Qorikancha",
+    "7 Little Lambs Street",
+    "Huaca Sapantiana",
+    "San Cristobal Viewpoint",
+    "Chinchero",
+    "Moray",
+    "Maras Salt Mines",
+    "Ollantaytambo",
+    "Qorikancha",
+    "Sacsayhuamán",
+    "Qenqo",
+    "Pucapucara",
+    "Tambomachay",
+    "Piscacucho (Km 82)",
+    "Patallacta",
+    "Wayllabamba",
+    "Warmiwañusca Pass",
+    "Pacaymayo",
+    "Runkurakay",
+    "Sayacmarka",
+    "Phuyupatamarca",
+    "Intipa",
+    "Wiñaywayna",
+    "Intipunku",
+    "Aguas Calientes",
+    "Machu Picchu",
+    "Monkey Island",
+    "Sandoval Lake",
+    "Parrot Clay Lick"
+    ],
+    days: "12 days",
+    nights: "11 nights",
+    price: "2800.00",
+    oldPrice: "3000.00",
+    included: ["Briefing","Professional Guide","Transportation","Train","Box Lunch"],
+    slug: "https://sakuraexpeditions.com/inca-trail-amazon-adventure-12-days/",
+    bookingSlug: "https://sakuraexpeditions.com/booking/?id=4906"
+  },
+  {
+    title: "2 Days Inca Trail Private Service",
+    description: "Enjoy a private 2-day Inca Trail adventure from Chachabamba to Machu Picchu through Wiñaywayna and the Sun Gate, with personalized service, scenic landscapes, and exclusive attention.",
+    image: "../../public/machu-pichu-private-service-2-days.webp",
+    badge: "BEST DEAL",
     difficulty: "Moderate",
     reviews: 442,
     locations: [
-      "Cusco",
-      "Ollantaytambo",
-      "Llactapata",
-      "Runkuracay",
-      "Sayacmarca",
-      "Phuyupatamarca",
-      "Wiñayhuayna",
-      "Machu Picchu",
-      "Aguas Calientes"
+      "Chachabamba (Km 104)",
+      "Wiñaywayna",
+      "Intipunku",
+      "Aguas Calientes",
+      "Machu Picchu"
     ],
-    days: "4 days",
-    nights: "3 nights",
-    price: "690.00",
-    oldPrice: "750.00",
-    included: ["Briefing","Expert Guide","Transportation","Train","All Inclusive","Premium Camping","MP Admission"],
-    slug: "https://sakuraexpeditions.com/inca-trail-to-machu-picchu-4-days/",
-    bookingSlug: "https://sakuraexpeditions.com/booking/?id=31"
+    days: "2 days",
+    nights: "1 nights",
+    price: "500.00",
+    oldPrice: "550.00",
+    included: ["Briefing","Accommodation","Transportation","Train","Bus","Guide","MachuPicchuEntrance","IncaTrailEntrance","Meals","AccommodationNight","FirstAid","Oxygen"],
+    slug: "https://sakuraexpeditions.com/2-days-inca-trail-private-service/",
+    bookingSlug: "https://wa.link/obdnm6"
   }
 ];
 ---
@@ -141,7 +162,7 @@ const tours = [
                   <span class="old-price">${tour.oldPrice}</span>
                   <span class="current-price">${tour.price}</span>
                 </div>
-                <div class="price-label">Por persona</div>
+                <div class="price-label">Per person </div>
               </div>
             </div>
 
