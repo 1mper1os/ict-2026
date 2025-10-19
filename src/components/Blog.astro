@@ -22,7 +22,7 @@ const articulos = [
   {
     id: 2,
     titulo: "10 Essential Tips for Acclimatizing in Cusco",
-    slug: "consejos-aclimatacion-cusco",
+    slug: "https://sakuraexpeditions.com/blogs/tips-for-acclimatizing-in-cusco/",
     extracto: "Cusco's altitude can be a challenge. Learn how to properly prepare and avoid altitude sickness to enjoy your adventure to the fullest.",
     imagen: "/4894.jpg",
     categoria: "Tips & Advice",
@@ -40,7 +40,7 @@ const articulos = [
   {
     id: 3,
     titulo: "Best Time to Visit Machu Picchu: Complete Guide 2026",
-    slug: "mejor-epoca-machu-picchu",
+    slug: "https://sakuraexpeditions.com/blogs/best-time-to-visit-machu-picchu-2026/",
     extracto: "Plan your trip at the perfect time. We analyze the weather, high and low seasons, and the best months to visit the Wonder of the World.",
     imagen: "/Camino-Inca-2-Dias.webp",
     categoria: "Planning",
@@ -97,7 +97,7 @@ const articulosDestacados = articulos.filter(a => a.destacado);
 const articulosRecientes = articulos.filter(a => !a.destacado);
 ---
 
-<section class="blog-section">
+<section class="blog-section" id="blog">
   
   </div>
 
@@ -185,9 +185,12 @@ const articulosRecientes = articulos.filter(a => !a.destacado);
         <div class="articles-section">
           <div class="section-header">
             <h2 class="section-title">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-              </svg>
+             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 20h9"/>
+              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/>
+            </svg>    
+
+
               Latest Articles
             </h2>
           </div>
@@ -238,7 +241,7 @@ const articulosRecientes = articulos.filter(a => !a.destacado);
                         {articulo.comentarios}
                       </span>
                     </div>
-                    <a href={`/blog/${articulo.slug}`} class="read-more-btn">
+                    <a href={`${articulo.slug}`} class="read-more-btn">
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M5 12h14M12 5l7 7-7 7"/>
                       </svg>
@@ -256,23 +259,7 @@ const articulosRecientes = articulos.filter(a => !a.destacado);
       <!-- Sidebar -->
       <aside class="blog-sidebar">
         <!-- Newsletter -->
-        <div class="sidebar-widget newsletter-widget">
-          <div class="widget-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-              <polyline points="22,6 12,13 2,6"></polyline>
-            </svg>
-          </div>
-          <h3 class="widget-title">Newsletter</h3>
-          <p class="widget-text">Receive exclusive guides and travel tips straight to your email.</p>
-          <form class="newsletter-form">
-            <input type="email" placeholder="your@email.com" required />
-            <button type="submit" class="subscribe-btn">
-              Subscribe
-            </button>
-          </form>
-        </div>
-
+        
         
 
         <!-- Tags Populares -->
@@ -294,7 +281,7 @@ const articulosRecientes = articulos.filter(a => !a.destacado);
         <div class="sidebar-widget social-widget">
           <h3 class="widget-title">Follow Us</h3>
           <div class="social-grid">
-            <a href="#" class="social-link" data-social="instagram">
+            <a href="https://www.instagram.com/sakura.expedition?igsh=ZXBsMDhrajY1ZXgz" class="social-link" data-social="instagram">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -302,20 +289,20 @@ const articulosRecientes = articulos.filter(a => !a.destacado);
               </svg>
               <span>Instagram</span>
             </a>
-            <a href="#" class="social-link" data-social="facebook">
+            <a href="https://www.facebook.com/Sakura.Expedition" class="social-link" data-social="facebook">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
               </svg>
               <span>Facebook</span>
             </a>
-            <a href="#" class="social-link" data-social="youtube">
+            <a href="https://www.youtube.com/@SakuraExpedition" class="social-link" data-social="youtube">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
                 <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="white"></polygon>
               </svg>
               <span>YouTube</span>
             </a>
-            <a href="#" class="social-link" data-social="tiktok">
+            <a href="https://www.tiktok.com/@sakuraexpedition?is_from_webapp=1&sender_device=pc" class="social-link" data-social="tiktok">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
               </svg>
@@ -751,74 +738,7 @@ const articulosRecientes = articulos.filter(a => !a.destacado);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
   }
 
-  .newsletter-widget {
-    background: linear-gradient(135deg, #002b4f 0%, #0d5b59 100%);
-    color: white;
-    text-align: center;
-  }
-
-  .widget-icon {
-    width: 60px;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1rem;
-    color: #cb9934;
-  }
-
-  .widget-title {
-    font-size: 1.3rem;
-    font-weight: 800;
-    color: #002b4f;
-    margin-bottom: 1rem;
-  }
-
-  .newsletter-widget .widget-title {
-    color: white;
-  }
-
-  .widget-text {
-    color: rgb(255, 255, 255);
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-  }
-
-  .newsletter-form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-
-  .newsletter-form input {
-    background: rgb(255, 255, 255);
-    border: none;
-    padding: 0.9rem 1.2rem;
-    border-radius: 12px;
-    font-size: 0.95rem;
-    color: #333;
-  }
-
-  .subscribe-btn {
-    background:#cb9934;
-    color: #fff;
-    border: none;
-    padding: 0.9rem 1.5rem;
-    border-radius: 12px;
-    font-weight: 800;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  .subscribe-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
-  }
-
+  
   .widget-list {
     display: flex;
     flex-direction: column;

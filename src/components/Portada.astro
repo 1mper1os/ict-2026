@@ -61,7 +61,7 @@ const socialLinks = [
   { 
     name: 'TripAdvisor', 
     icon: 'tripadvisor', 
-    url: 'https://tripadvisor.com',
+    url: 'https://www.tripadvisor.es/Attraction_Review-g294318-d14924567-Reviews-Sakura_Expedition-Machu_Picchu_Sacred_Valley_Cusco_Region.html',
     color: '#00af87'
   },
   { 
@@ -158,7 +158,7 @@ const socialLinks = [
           </div>
 
           <div class="announcement-actions">
-            <a href="/booking" class="reserve-button">
+            <a href="https://sakuraexpeditions.com/booking/" class="reserve-button">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
@@ -293,13 +293,13 @@ const socialLinks = [
       <!-- Call to Action -->
       <div class="cta-section">
         <div class="cta-buttons">
-          <a href="/tours" class="cta-button">
+          <a href="https://sakuraexpeditions.com/inca-trail-to-machu-picchu/" class="cta-button">
             <span>Check availability</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
           </a>
-          <a href="/contact" class="cta-button">
+          <a href="https://wa.link/obdnm6" class="cta-button">
             <span>Inquire now</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -1273,7 +1273,10 @@ const socialLinks = [
     }
   }
 
-  /* Responsive */
+  /* ========================================
+     RESPONSIVE - MEJORAS PARA MÓVILES
+     ======================================== */
+
   @media (max-width: 1400px) {
     .hero-container {
       gap: 3rem;
@@ -1317,65 +1320,101 @@ const socialLinks = [
 
   @media (max-width: 768px) {
     .hero-section {
-      padding: 3rem 1.5rem;
+      padding: 2rem 1rem;
       background-attachment: scroll;
+      min-height: auto;
     }
 
     .hero-container {
       flex-direction: column;
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
-    /* Announcement Banner Mobile */
+    /* ===== ANNOUNCEMENT BANNER MÓVIL ===== */
     .announcement-banner {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
+      border-radius: 12px;
     }
 
     .announcement-content {
       flex-direction: column;
+      align-items: stretch;
       text-align: center;
-      padding: 1.2rem 1rem;
-      gap: 1rem;
+      padding: 1rem;
+      gap: 0.8rem;
+    }
+
+    .announcement-icon {
+      width: 40px;
+      height: 40px;
+      align-self: center;
     }
 
     .announcement-text {
       flex-direction: column;
-      gap: 0.8rem;
+      gap: 0.6rem;
       text-align: center;
+      align-items: center;
+    }
+
+    .urgent-badge {
+      font-size: 0.7rem;
+      padding: 0.35rem 0.9rem;
     }
 
     .message {
       flex-direction: column;
       text-align: center;
+      font-size: 0.85rem;
+      gap: 0.4rem;
+    }
+
+    .spots-remaining {
+      padding: 0.25rem 0.7rem;
+    }
+
+    .number {
+      font-size: 1.2rem;
+    }
+
+    .spots-text {
+      font-size: 0.8rem;
     }
 
     .announcement-actions {
       width: 100%;
+      margin-top: 0.3rem;
     }
 
     .reserve-button {
       width: 100%;
       justify-content: center;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.85rem;
     }
 
     .close-banner {
       position: absolute;
-      top: 10px;
-      right: 10px;
+      top: 8px;
+      right: 8px;
+      width: 28px;
+      height: 28px;
     }
 
-    /* Redes sociales en móvil - horizontal */
+    /* ===== REDES SOCIALES HORIZONTALES ===== */
     .social-sidebar {
       position: static;
       transform: none;
       flex-direction: row;
       justify-content: center;
-      padding: 0;
+      padding: 1rem 0;
       order: -1;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
 
     .social-line {
-      width: 60px;
+      width: 40px;
       height: 2px;
       background: linear-gradient(
         to right,
@@ -1385,71 +1424,204 @@ const socialLinks = [
       );
     }
 
+    .social-link {
+      width: 44px;
+      height: 44px;
+    }
+
     .social-link:hover {
-      transform: translateY(-8px) scale(1.1);
+      transform: translateY(-5px) scale(1.1);
     }
 
     .social-tooltip {
       left: 50%;
-      top: -50px;
+      right: auto;
+      top: -45px;
       transform: translateX(-50%);
     }
 
     .social-tooltip::before {
       left: 50%;
+      right: auto;
       top: 100%;
       transform: translateX(-50%);
       border: 6px solid transparent;
       border-top-color: rgba(0, 0, 0, 0.9);
+      border-right-color: transparent;
     }
 
-    .tour-cards {
-      grid-template-columns: 1fr;
+    /* ===== TOP BADGE ===== */
+    .top-badge {
+      font-size: 0.8rem;
+      padding: 0.6rem 1.2rem;
+      align-self: center;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ===== TEXTO PRINCIPAL ===== */
+    .text-content {
+      padding: 0 0.5rem;
     }
 
     .title-line {
-      font-size: clamp(2rem, 8vw, 3rem);
+      font-size: clamp(1.8rem, 8vw, 2.5rem);
     }
 
+    .title-line.highlight::after {
+      width: 120px;
+      bottom: -8px;
+      height: 3px;
+    }
+
+    .hero-description {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      padding: 0 0.5rem;
+    }
+
+    /* ===== STATS ===== */
     .stats-row {
       gap: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     .stat-number {
       font-size: 2rem;
     }
 
+    .stat-label {
+      font-size: 0.8rem;
+    }
+
+    /* ===== TARJETAS DE TOURS ===== */
+    .tour-cards {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .tour-card {
+      border-radius: 16px;
+    }
+
+    .card-image-wrapper {
+      height: 240px;
+    }
+
+    .featured-badge {
+      top: 12px;
+      right: 12px;
+      padding: 0.35rem 0.8rem;
+      font-size: 0.75rem;
+    }
+
+    .image-badges {
+      bottom: 12px;
+      left: 12px;
+      right: 12px;
+    }
+
+    .difficulty-badge,
+    .rating-badge {
+      font-size: 0.7rem;
+      padding: 0.35rem 0.7rem;
+    }
+
+    .card-content {
+      padding: 1.2rem;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+    }
+
+    .card-subtitle {
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-info {
+      padding: 0.8rem 0;
+      margin-bottom: 1rem;
+    }
+
+    .info-item {
+      font-size: 0.8rem;
+    }
+
+    .price-value {
+      font-size: 1.3rem;
+    }
+
+    .card-button,
+    .card-button-details {
+      padding: 0.85rem 1.2rem;
+      font-size: 0.85rem;
+      border-radius: 8px;
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      margin-top: 1.5rem;
+      gap: 1rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      width: 100%;
+      gap: 0.8rem;
+    }
+
+    .cta-button {
+      width: 100%;
+      padding: 1rem 2rem;
+      font-size: 0.95rem;
+      justify-content: center;
+    }
+
+    .cta-note {
+      font-size: 0.85rem;
+      padding: 0 1rem;
+    }
+
+    /* ===== SCROLL INDICATOR ===== */
     .scroll-indicator {
       display: none;
+    }
+
+    /* ===== ELEMENTOS FLOTANTES ===== */
+    .floating-element {
+      opacity: 0.3;
+    }
+
+    .element-1 {
+      width: 200px;
+      height: 200px;
+    }
+
+    .element-2 {
+      width: 150px;
+      height: 150px;
+    }
+
+    .element-3 {
+      width: 100px;
+      height: 100px;
     }
   }
 
   @media (max-width: 480px) {
     .hero-section {
-      padding: 2rem 1rem;
+      padding: 1.5rem 0.8rem;
     }
 
-    .top-badge {
-      font-size: 0.75rem;
-      padding: 0.5rem 1rem;
+    /* ===== ANNOUNCEMENT BANNER PEQUEÑO ===== */
+    .announcement-banner {
+      margin-bottom: 0.8rem;
     }
 
-    .hero-description {
-      font-size: 0.95rem;
-    }
-
-    .card-image-wrapper {
-      height: 220px;
-    }
-
-    .cta-button {
-      padding: 1rem 2rem;
-      font-size: 0.95rem;
-    }
-
-    /* Announcement Banner Small Mobile */
     .announcement-content {
-      padding: 1rem;
+      padding: 0.8rem;
     }
 
     .announcement-icon {
@@ -1457,13 +1629,13 @@ const socialLinks = [
       height: 36px;
     }
 
-    .message {
-      font-size: 0.85rem;
+    .urgent-badge {
+      font-size: 0.65rem;
+      padding: 0.3rem 0.75rem;
     }
 
-    .urgent-badge {
-      font-size: 0.7rem;
-      padding: 0.3rem 0.8rem;
+    .message {
+      font-size: 0.8rem;
     }
 
     .number {
@@ -1472,6 +1644,266 @@ const socialLinks = [
 
     .spots-text {
       font-size: 0.75rem;
+    }
+
+    .reserve-button {
+      padding: 0.7rem 1.2rem;
+      font-size: 0.8rem;
+    }
+
+    /* ===== REDES SOCIALES ===== */
+    .social-sidebar {
+      padding: 0.8rem 0;
+      gap: 0.8rem;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+    }
+
+    .social-line {
+      width: 30px;
+    }
+
+    /* ===== TOP BADGE ===== */
+    .top-badge {
+      font-size: 0.75rem;
+      padding: 0.5rem 1rem;
+      gap: 0.5rem;
+    }
+
+    .top-badge svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* ===== TEXTO PRINCIPAL ===== */
+    .text-content {
+      padding: 0 0.3rem;
+    }
+
+    .title-line {
+      font-size: clamp(1.6rem, 7vw, 2rem);
+    }
+
+    .title-line.highlight::after {
+      width: 100px;
+      bottom: -6px;
+      height: 2px;
+    }
+
+    .hero-description {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: 1.2rem;
+      padding: 0 0.3rem;
+    }
+
+    /* ===== STATS ===== */
+    .stats-row {
+      gap: 1.2rem;
+      flex-direction: column;
+    }
+
+    .stat-item {
+      width: 100%;
+      flex-direction: row;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .stat-number {
+      font-size: 1.8rem;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      text-align: left;
+    }
+
+    /* ===== TARJETAS DE TOURS ===== */
+    .tour-cards {
+      gap: 1.2rem;
+    }
+
+    .tour-card {
+      border-radius: 14px;
+    }
+
+    .card-image-wrapper {
+      height: 200px;
+    }
+
+    .featured-badge {
+      top: 10px;
+      right: 10px;
+      padding: 0.3rem 0.7rem;
+      font-size: 0.7rem;
+    }
+
+    .featured-badge svg {
+      width: 10px;
+      height: 10px;
+    }
+
+    .image-badges {
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+    }
+
+    .difficulty-badge,
+    .rating-badge {
+      font-size: 0.65rem;
+      padding: 0.3rem 0.6rem;
+    }
+
+    .rating-badge svg {
+      width: 10px;
+      height: 10px;
+    }
+
+    .card-content {
+      padding: 1rem;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-subtitle {
+      font-size: 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .card-info {
+      padding: 0.7rem 0;
+      margin-bottom: 0.8rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+
+    .info-item {
+      font-size: 0.75rem;
+    }
+
+    .info-item svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .price-tag {
+      align-items: flex-start;
+    }
+
+    .from-label {
+      font-size: 0.65rem;
+    }
+
+    .price-value {
+      font-size: 1.2rem;
+    }
+
+    .card-button,
+    .card-button-details {
+      padding: 0.75rem 1rem;
+      font-size: 0.8rem;
+      gap: 0.5rem;
+    }
+
+    .card-button svg,
+    .card-button-details svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      margin-top: 1rem;
+      gap: 0.8rem;
+    }
+
+    .cta-buttons {
+      gap: 0.7rem;
+    }
+
+    .cta-button {
+      padding: 0.9rem 1.5rem;
+      font-size: 0.9rem;
+      gap: 0.7rem;
+    }
+
+    .cta-button svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .cta-note {
+      font-size: 0.8rem;
+      gap: 0.4rem;
+      padding: 0 0.5rem;
+    }
+
+    .cta-note svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+
+    /* ===== ELEMENTOS DECORATIVOS ===== */
+    .floating-element {
+      opacity: 0.2;
+    }
+
+    .element-1,
+    .element-2,
+    .element-3 {
+      display: none;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .hero-section {
+      padding: 1rem 0.5rem;
+    }
+
+    .announcement-content {
+      padding: 0.7rem;
+    }
+
+    .message {
+      font-size: 0.75rem;
+    }
+
+    .reserve-button {
+      font-size: 0.75rem;
+      padding: 0.65rem 1rem;
+    }
+
+    .title-line {
+      font-size: 1.5rem;
+    }
+
+    .hero-description {
+      font-size: 0.85rem;
+    }
+
+    .card-image-wrapper {
+      height: 180px;
+    }
+
+    .card-button,
+    .card-button-details {
+      font-size: 0.75rem;
+      padding: 0.7rem 0.9rem;
+    }
+
+    .cta-button {
+      font-size: 0.85rem;
+      padding: 0.85rem 1.2rem;
     }
   }
 </style>
