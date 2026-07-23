@@ -1,0 +1,219 @@
+---
+// WhyChooseUs.astro - Sakura Expeditions
+const razones = [
+  {
+    icon: "direct",
+    title: "Direct Operator",
+    description: "No middlemen or resellers: we coordinate every trekking detail with our own team."
+  },
+  {
+    icon: "guides",
+    title: "Certified Native Guides",
+    description: "Quechua-speaking professionals with official training in history, first aid and mountain safety."
+  },
+  {
+    icon: "eco",
+    title: "Eco-Sustainable Camps",
+    description: "Leave No Trace practices, responsible waste management and support for local communities."
+  },
+  {
+    icon: "safety",
+    title: "Guaranteed Safety",
+    description: "Official permits, travel insurance, oxygen equipment and evacuation protocols on every route."
+  }
+];
+
+const estadisticas = [
+  { value: "10+", label: "Years of experience" },
+  { value: "12,000+", label: "Happy travelers" },
+  { value: "4.9★", label: "Average rating" },
+  { value: "100%", label: "Certified local guides" }
+];
+---
+
+<section class="why-us" id="nosotros">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow on-dark">Why choose us?</span>
+      <h2 class="sec-title on-dark">A local operator, not a middleman</h2>
+      <p class="sec-sub on-dark">We are the agency that walks the trail with you: we manage permits, guides, porters and camps from start to finish, without outsourcing any part of your experience.</p>
+    </div>
+
+    <div class="why-grid">
+      {razones.map((razon) => (
+        <div class="why-card reveal">
+          <div class="why-icon">
+            {razon.icon === 'direct' && (
+              <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
+            )}
+            {razon.icon === 'guides' && (
+              <svg viewBox="0 0 24 24"><path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1z"/></svg>
+            )}
+            {razon.icon === 'eco' && (
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4.5 8-11.8A8 8 0 0 0 4 10.2C4 17.5 12 22 12 22z"/></svg>
+            )}
+            {razon.icon === 'safety' && (
+              <svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.4 8.5-8 9-4.6-.5-8-4-8-9V6z"/></svg>
+            )}
+          </div>
+          <h3>{razon.title}</h3>
+          <p>{razon.description}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="stat-strip reveal">
+      {estadisticas.map((stat) => (
+        <div class="stat-item">
+          <strong>{stat.value}</strong>
+          <span>{stat.label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .why-us {
+    background: var(--night);
+    padding: 110px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .why-us::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 85% 20%, rgba(203, 153, 52, 0.08), transparent 45%);
+  }
+
+  .sec-head {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 56px;
+  }
+
+  .sec-eyebrow.on-dark {
+    color: var(--gold-light);
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .sec-title.on-dark {
+    font-size: 2.3rem;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+    color: #fff;
+    margin-bottom: 14px;
+  }
+
+  .sec-sub.on-dark {
+    font-size: 1rem;
+    color: #a8b6c8;
+    line-height: 1.6;
+  }
+
+  .why-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 64px;
+  }
+
+  .why-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 28px 22px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .why-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(203, 153, 52, 0.4);
+  }
+
+  .why-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(203, 153, 52, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    color: var(--gold-light);
+  }
+
+  .why-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.8;
+  }
+
+  .why-card h3 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+    font-family: 'Korolev', sans-serif;
+  }
+
+  .why-card p {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    line-height: 1.55;
+  }
+
+  .stat-strip {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-top: 40px;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .stat-item {
+    flex: 1;
+    min-width: 140px;
+    text-align: center;
+  }
+
+  .stat-item strong {
+    display: block;
+    font-family: 'Korolev', sans-serif;
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: var(--gold-light);
+  }
+
+  .stat-item span {
+    font-size: 0.72rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+  }
+
+  @media (max-width: 980px) {
+    .why-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .why-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

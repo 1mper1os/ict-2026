@@ -1,0 +1,168 @@
+---
+// BeneficiosNew.astro - Sakura Expeditions
+const beneficios = [
+  {
+    title: "Small Groups",
+    description: "Maximum travelers per group for a more personal and safe experience."
+  },
+  {
+    title: "Premium Camping Gear Included",
+    description: "Double-layer tents, insulated sleeping pads and high-altitude sleeping bags."
+  },
+  {
+    title: "Andean Chef & Certified Porters",
+    description: "Balanced meals on the trail and a trained, well-paid support team."
+  },
+  {
+    title: "Travel Insurance Included",
+    description: "Medical and evacuation coverage throughout the entire journey."
+  },
+  {
+    title: "24/7 Assistance",
+    description: "Support before, during and after your trip, in Spanish and English."
+  }
+];
+---
+
+<section class="benefits" id="beneficios">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">Benefits</span>
+      <h2 class="sec-title">What's included when you travel with us</h2>
+      <p class="sec-sub">Every package is designed so you only have to worry about walking and enjoying the landscape.</p>
+    </div>
+
+    <div class="benefits-wrap">
+      <div class="benefits-img reveal">
+        <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?q=80&w=900&auto=format&fit=crop" alt="Campamento Camino Inca" />
+      </div>
+      <div class="benefits-list reveal">
+        {beneficios.map((beneficio) => (
+          <div class="benefit-row">
+            <div class="benefit-check">
+              <svg viewBox="0 0 24 24"><path d="M5 12l4 4L19 6"/></svg>
+            </div>
+            <div>
+              <h4>{beneficio.title}</h4>
+              <p>{beneficio.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .benefits {
+    background: var(--cream-2);
+    padding: 110px 0;
+  }
+
+  .sec-head {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 56px;
+  }
+
+  .sec-eyebrow {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--clay);
+    margin-bottom: 14px;
+  }
+
+  .sec-title {
+    font-size: 2.3rem;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+
+  .sec-sub {
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .benefits-wrap {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .benefits-img {
+    position: relative;
+    border-radius: 26px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(16, 32, 47, 0.18);
+  }
+
+  .benefits-img img {
+    height: 320px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .benefit-row {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .benefit-check {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .benefit-check svg {
+    width: 16px;
+    height: 16px;
+    stroke: var(--gold-light);
+    fill: none;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .benefit-row h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 4px;
+    font-family: 'Korolev', sans-serif;
+  }
+
+  .benefit-row p {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  @media (max-width: 900px) {
+    .benefits-wrap {
+      grid-template-columns: 1fr;
+    }
+
+    .benefits-img img {
+      height: 340px;
+    }
+  }
+</style>

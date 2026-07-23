@@ -1,0 +1,386 @@
+---
+// Certifications.astro - Sakura Expeditions
+const certificaciones = [
+  {
+    id: 1,
+    titulo: "Tourism Operator",
+    subtitulo: "Regional Government of Cusco",
+    year: "2021",
+    imagen: "/Constancia-de-conformidad-sakura-expedition.jpeg"
+  },
+  {
+    id: 2,
+    titulo: "International Award 2024",
+    subtitulo: "Business Excellence",
+    year: "2024",
+    imagen: "/Certificado-Comunidad.jpg"
+  },
+  {
+    id: 3,
+    titulo: "SERNANP Authorization",
+    subtitulo: "Machu Picchu Inca Trails",
+    year: "2023-2027",
+    imagen: "/Servicio-de-Areas-Naturales-sakura-expedition.jpeg"
+  },
+  {
+    id: 4,
+    titulo: "Foreign Trade & Tourism",
+    subtitulo: "Code of Conduct ESNNA",
+    year: "2017",
+    imagen: "/Comercio-exterior-y-turismo-sakura-expedition.jpeg"
+  },
+  {
+    id: 5,
+    titulo: "Services Contract",
+    subtitulo: "SERNANP Machu Picchu",
+    year: "2024",
+    imagen: "/Contrato-de-servicios-turisticos-sakura-expedition.jpeg"
+  },
+  {
+    id: 6,
+    titulo: "Operating License",
+    subtitulo: "Municipality of Cusco",
+    year: "2018",
+    imagen: "/Licencia-de-Funcionamiento-sakura-expedition.jpeg"
+  }
+];
+---
+
+<section class="certifications-section" id="certificaciones">
+  <div class="container">
+    <div class="section-header-center reveal">
+      <span class="section-badge">Official Recognitions</span>
+      <h2 class="section-title">
+        Certifications and <span class="highlight">Awards</span>
+      </h2>
+      <p class="section-description">
+        Official recognitions that endorse our quality and commitment
+      </p>
+    </div>
+
+    <div class="certifications-gallery">
+      {certificaciones.map((cert) => (
+        <div class="cert-photo-card reveal" data-cert={cert.id}>
+          <div class="cert-photo-wrapper">
+            <img src={cert.imagen} alt={cert.titulo} />
+            <div class="cert-overlay">
+              <div class="cert-info">
+                <h3>{cert.titulo}</h3>
+                <p>{cert.subtitulo}</p>
+                <span class="cert-year">{cert.year}</span>
+              </div>
+              <button class="view-cert-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                </svg>
+                View Certificate
+              </button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Modal Lightbox -->
+<div class="cert-modal" id="certModal">
+  <div class="modal-backdrop"></div>
+  <div class="modal-content">
+    <button class="modal-close">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <img id="modalImage" src="" alt="Certificado" />
+  </div>
+</div>
+
+<style>
+  .certifications-section {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, var(--cream) 0%, var(--cream-2) 100%);
+  }
+
+  .section-header-center {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 4rem;
+  }
+
+  .section-badge {
+    display: inline-block;
+    color: var(--clay);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  .section-title .highlight {
+    background: linear-gradient(135deg, var(--clay), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-description {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-top: 1rem;
+  }
+
+  .certifications-gallery {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
+  }
+
+  .cert-photo-card {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(10, 15, 29, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .cert-photo-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(10, 15, 29, 0.2);
+  }
+
+  .cert-photo-wrapper {
+    position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    background: white;
+  }
+
+  .cert-photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .cert-photo-card:hover .cert-photo-wrapper img {
+    transform: scale(1.1);
+  }
+
+  .cert-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(10, 15, 29, 0) 0%,
+      rgba(10, 15, 29, 0.7) 50%,
+      rgba(10, 15, 29, 0.95) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .cert-photo-card:hover .cert-overlay {
+    opacity: 1;
+  }
+
+  .cert-info {
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .cert-info h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: white;
+  }
+
+  .cert-info p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.5rem;
+  }
+
+  .cert-year {
+    display: inline-block;
+    background: var(--gold);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  .view-cert-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    color: var(--ink);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: fit-content;
+  }
+
+  .view-cert-btn:hover {
+    background: var(--gold);
+    color: white;
+    transform: translateX(5px);
+  }
+
+  .view-cert-btn svg {
+    transition: transform 0.3s ease;
+  }
+
+  .view-cert-btn:hover svg {
+    transform: rotate(45deg);
+  }
+
+  /* Modal Lightbox */
+  .cert-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cert-modal.active {
+    display: flex;
+  }
+
+  .modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+  }
+
+  .modal-content {
+    position: relative;
+    z-index: 10000;
+    max-width: 90vw;
+    max-height: 90vh;
+    animation: modalZoom 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @keyframes modalZoom {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .modal-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 25px 100px rgba(0, 0, 0, 0.5);
+  }
+
+  .modal-close {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--ink);
+  }
+
+  .modal-close:hover {
+    background: var(--gold);
+    color: white;
+    transform: rotate(90deg);
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .certifications-gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .certifications-gallery {
+      grid-template-columns: 1fr;
+    }
+
+    .cert-overlay {
+      opacity: 1;
+      background: linear-gradient(
+        180deg,
+        rgba(10, 15, 29, 0) 30%,
+        rgba(10, 15, 29, 0.85) 100%
+      );
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('certModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalClose = document.querySelector('.modal-close');
+    const modalBackdrop = document.querySelector('.modal-backdrop');
+    const certCards = document.querySelectorAll('.cert-photo-card');
+
+    certCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const img = card.querySelector('img');
+        modalImage.src = img.src;
+        modalImage.alt = img.alt;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    const closeModal = () => {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    modalClose.addEventListener('click', closeModal);
+    modalBackdrop.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+  });
+</script>

@@ -1,0 +1,392 @@
+---
+const paquetes = [
+  {
+    title: "Inca Trail Express",
+    duration: "Full day",
+    description: "A dynamic push to the Sun Gate, timed to reach Machu Picchu right as the light turns gold.",
+    distance: "12 km",
+    difficulty: "Moderate",
+    altitude: "2,720 m",
+    price: "US$380",
+    image: "/Camino-Inca-Express.webp",
+    slug: "https://wa.link/obdnm6",
+    featured: false
+  },
+  {
+    title: "Inca Trail 2 Days",
+    duration: "2 days / 1 night",
+    description: "The best-preserved section of trail, with a hotel night in Aguas Calientes to rest before Machu Picchu.",
+    distance: "12 km",
+    difficulty: "Moderate",
+    altitude: "2,720 m",
+    price: "US$465",
+    image: "/Camino-Inca-2-Dias.webp",
+    slug: "https://sakuraexpeditions.com/booking/?id=38",
+    featured: false
+  },
+  {
+    title: "Inca Trail 4 Days",
+    duration: "4 days / 3 nights",
+    description: "The complete classic route: camps, certified porters, and a chef, ending at the Sun Gate on day four.",
+    distance: "43 km",
+    difficulty: "Moderate",
+    altitude: "4,215 m",
+    price: "US$690",
+    image: "/Camino-Inca-4-Dias.webp",
+    slug: "https://sakuraexpeditions.com/booking/?id=31",
+    featured: true
+  },
+  {
+    title: "Salkantay Trek VIP",
+    duration: "5 days / 4 nights",
+    description: "Private glamping, an exclusive chef, and a small group to Machu Picchu via the Salkantay route.",
+    distance: "60 km",
+    difficulty: "Challenging",
+    altitude: "4,630 m",
+    price: "US$520",
+    image: "/salkantay-33-min-scaled.jpg",
+    slug: "https://sakuraexpeditions.com/booking/",
+    featured: false
+  }
+];
+---
+
+<section class="routes" id="paquetes">
+  <div class="routes-inner">
+    <header class="routes-header">
+      <span class="routes-eyebrow">Inca Trail, Peru</span>
+<h1 class="routes-title">Available walks of the <em>Inca Trail 2027</em></h1>
+      <p class="routes-sub">Each route leads to the same breathtaking view — but the journey is entirely yours to choose.</p>
+      <div class="routes-divider"></div>
+    </header>
+
+    <div class="routes-grid">
+      {paquetes.map((pkg, i) => (
+        <article
+          class={`route-card${pkg.featured ? ' featured' : ''}`}
+          style={`--i: ${i}`}
+          data-animate
+        >
+          <div class="route-media">
+            <img src={pkg.image} alt={pkg.title} />
+          </div>
+
+          <div class="route-body">
+            <div class="route-duration">
+              {pkg.featured ? (
+                <span class="duration-guide">Guide's pick</span>
+              ) : (
+                <span>{pkg.duration}</span>
+              )}
+            </div>
+
+            <h3 class="route-title">{pkg.title}</h3>
+            <p class="route-desc">{pkg.description}</p>
+
+            <div class="route-line"></div>
+
+            <div class="route-meta">
+              {pkg.distance} · {pkg.difficulty} · {pkg.altitude}
+            </div>
+
+            <div class="route-footer">
+              <div class="route-price-block">
+                <span class="route-price">{pkg.price}</span>
+                <span class="route-pp">per person</span>
+              </div>
+              <a href={pkg.slug} class="route-btn" aria-label={`Reserve ${pkg.title}`}>Reserve</a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ── Scoped Design Tokens ── */
+  :root {
+    --r-paper: #FBF7EE;
+    --r-paper-2: #F1E8D3;
+    --r-ink: #20261F;
+    --r-ink-soft: #5E6B57;
+    --r-ink-faint: #93A08C;
+    --r-emerald: #2F5D45;
+    --r-emerald-dark: #234634;
+    --r-terracotta: #C1622F;
+    --r-gold: #B08D46;
+    --r-line: #DCD0AE;
+  }
+
+  /* ── Section Shell ── */
+  .routes {
+    position: relative;
+    background: var(--r-paper);
+    padding: 100px 0 110px;
+    overflow: hidden;
+  }
+
+  .routes-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ── Header ── */
+  .routes-header {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto 60px;
+  }
+
+  .routes-eyebrow {
+    display: block;
+    font-family: 'Korolev', sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: #b21f27;
+    letter-spacing: 0.5px;
+    margin-bottom: 18px;
+  }
+
+  .routes-title {
+    font-family: 'Korolev', sans-serif;
+    font-weight: 700;
+    font-size: clamp(38px, 5.6vw, 64px);
+    line-height: 1.08;
+    color: #002b4f;
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+  }
+  .routes-title em { 
+    color: #b21f27;
+  }
+
+
+  .routes-sub {
+    font-family: 'Korolev', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: black;
+    max-width: 520px;
+    margin: 0 auto 24px;
+  }
+
+  .routes-divider {
+    width: 48px;
+    height: 1px;
+    background: var(--r-gold);
+    margin: 0 auto;
+  }
+
+  /* ── Grid ── */
+  .routes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 26px;
+  }
+
+  /* ── Card ── */
+  .route-card {
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition-delay: calc(var(--i) * 90ms);
+    box-shadow: 1px 1px 1px #f5f5f5, 1px 1px 1px #f5f5f5, 1px 1px 1px black;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .route-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .route-media {
+    position: relative;
+    height: 172px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .route-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .route-card:hover .route-media img {
+    transform: scale(1.06);
+  }
+
+  .route-body {
+    padding: 18px 0 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .route-duration {
+    margin-bottom: 8px;
+    font-family: 'Korolev', sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 0.88rem;
+    color: var(--r-ink-soft);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  
+  .duration-guide {
+    color: var(--r-terracotta);
+  }
+
+  .route-title {
+    font-family: 'Korolev', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.2;
+    color: #002b4f;
+    margin-bottom: 10px;
+  }
+
+  .route-desc {
+    font-family: 'Korolev', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--r-ink-soft);
+    min-height: 44px;
+    flex: 1;
+  }
+
+  .route-line {
+    width: 100%;
+    height: 1px;
+    background: #cb9934;
+    margin: 16px 0 14px;
+  }
+
+  .route-meta {
+    font-family: 'Korolev', sans-serif;
+    font-weight: 500;
+    font-size: 11.5px;
+    color: var(--r-ink-faint);
+    letter-spacing: 0.2px;
+    margin-bottom: 18px;
+  }
+
+  .route-footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: auto;
+  }
+
+  .route-price-block {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .route-price {
+    font-family: 'Korolev', sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    color: #002b4f;
+    line-height: 1;
+  }
+
+  .route-pp {
+    font-family: 'Korolev', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    color: var(--r-ink-faint);
+    margin-top: 3px;
+  }
+
+  .route-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Korolev', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: #002b4f;
+    background: transparent;
+    border: 1.5px solid #002b4f;
+    border-radius: 8px;
+    padding: 9px 20px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  }
+
+  .route-btn:hover {
+    background: #002b4f;
+    color: var(--r-paper);
+    transform: translateY(-2px);
+  }
+
+  .route-btn:focus-visible {
+    outline: 3px solid var(--r-gold);
+    outline-offset: 2px;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 1080px) {
+    .routes-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .routes {
+      padding: 70px 0 80px;
+    }
+
+    .routes-grid {
+      grid-template-columns: 1fr;
+      max-width: 380px;
+      margin: 0 auto;
+    }
+
+    .routes-header {
+      margin-bottom: 44px;
+    }
+  }
+
+  /* ── Reduced motion ── */
+  @media (prefers-reduced-motion: reduce) {
+    .route-card {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  (() => {
+    const cardObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          cardObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.route-card[data-animate]').forEach(card => {
+      cardObserver.observe(card);
+    });
+  })();
+</script>
