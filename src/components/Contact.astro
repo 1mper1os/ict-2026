@@ -1,0 +1,105 @@
+---
+// Contact.astro - Sección de contacto
+---
+
+<section class="contact" id="contacto">
+  <div class="container">
+    <span class="contact-eyebrow">Get in Touch</span>
+    <h2>Contact Us</h2>
+    <p>Have questions about the Inca Trail? We're here to help you plan your adventure.</p>
+    <div class="contact-methods">
+      <a href="https://wa.me/51984573283?text=Hello%20Sakura%20Expeditions%2C%20I%20have%20a%20question" class="contact-card" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        <span>WhatsApp</span>
+        <small>+51 984 573 283</small>
+      </a>
+      <a href="mailto:info@sakuraexpeditions.com" class="contact-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        <span>Email</span>
+        <small>info@sakuraexpeditions.com</small>
+      </a>
+      <div class="contact-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Location</span>
+        <small>Cusco, Peru</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    padding: 100px 0;
+    text-align: center;
+    background: var(--navy);
+  }
+
+  .contact-eyebrow {
+    color: var(--gold-light);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .contact h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #fff;
+    margin: 0 0 14px;
+  }
+
+  .contact p {
+    color: #94a3b8;
+    font-size: 1rem;
+    max-width: 480px;
+    margin: 0 auto 48px;
+    line-height: 1.6;
+  }
+
+  .contact-methods {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 36px 32px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    min-width: 220px;
+    text-decoration: none;
+    transition: background 0.25s, border-color 0.25s;
+  }
+
+  .contact-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--gold);
+  }
+
+  .contact-card svg {
+    width: 32px;
+    height: 32px;
+    stroke: var(--gold);
+  }
+
+  .contact-card span {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .contact-card small {
+    color: #94a3b8;
+    font-size: 0.82rem;
+  }
+</style>

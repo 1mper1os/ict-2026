@@ -7,10 +7,11 @@
     <div class="brand">
       <img src="/logo9.png" alt="Sakura Expeditions" class="brand-logo" />
     </div>
-    <div class="nav-links">
+    <div class="nav-links" id="navLinks">
       <a href="#inicio">Home</a>
       <a href="#paquetes">Routes</a>
       <a href="#nosotros">About</a>
+      <a href="#contacto">Contact</a>
       <a href="#blog">Blog</a>
       <a href="#reservar" class="nav-cta">Book Now</a>
     </div>
@@ -114,6 +115,20 @@
   @media (max-width: 860px) {
     .nav-links {
       display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgba(10, 15, 29, 0.97);
+      flex-direction: column;
+      padding: 24px;
+      gap: 18px;
+      backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-links.active {
+      display: flex;
     }
 
     .menu-toggle {
